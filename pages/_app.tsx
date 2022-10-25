@@ -68,7 +68,7 @@ export default function MyApp({
       <CartProvider>
         <UIProvider>
           <SessionProvider session={pageProps.session}>
-            <ThemeProvider>
+            <ThemeProvider defaultTheme="light">
               <Component {...pageProps} />
             </ThemeProvider>
           </SessionProvider>
