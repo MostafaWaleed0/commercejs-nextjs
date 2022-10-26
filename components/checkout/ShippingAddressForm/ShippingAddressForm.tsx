@@ -111,9 +111,7 @@ export default function ShippingAddressForm({
       name: string;
       value: SetStateAction<string> | string;
     };
-    preventDefault?: () => void;
   }) {
-    e.preventDefault();
     setValues((prevInput) => ({
       ...prevInput,
       [e.target.name]: e.target.value
