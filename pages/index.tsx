@@ -126,7 +126,7 @@ export default function Home({
         <section className="container region space-y-14">
           <header className="flex justify-between	items-center">
             <h2>featured</h2>
-            <Link href="/plants">
+            <Link href="/categories/plants">
               <a className="">view all</a>
             </Link>
           </header>
@@ -178,7 +178,7 @@ export default function Home({
         <section className="container region space-y-14">
           <header className="flex justify-between	items-center">
             <h2>plant stands</h2>
-            <Link href="/products">
+            <Link href="/categories/plant-care">
               <a className="">view all</a>
             </Link>
           </header>
