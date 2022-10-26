@@ -24,8 +24,9 @@ export default function ShippingAddressForm({
 }: Props) {
   const router = useRouter();
 
-  const [shippingCountries, setShippingCountries] =
-    useState<LocaleListCountriesResponse['countries']>();
+  const [shippingCountries, setShippingCountries] = useState<
+    LocaleListCountriesResponse['countries'] | {}
+  >({});
   const [selectedCountry, setSelectedCountry] = useState('');
 
   async function fetchShippingCountries(checkoutTokenId: string) {
@@ -37,7 +38,7 @@ export default function ShippingAddressForm({
   }
 
   useEffect(() => {
-    fetchShippingCountries(checkoutToken.id);
+    fetchShippingCountries(checkoutToken?.id);
   }, []);
 
   const countries = Object.entries(shippingCountries).map(([code, name]) => ({
@@ -45,8 +46,9 @@ export default function ShippingAddressForm({
     label: name
   }));
 
-  const [shippingSubdivisions, setShippingSubdivisions] =
-    useState<LocaleListSubdivisionsResponse['subdivisions']>();
+  const [shippingSubdivisions, setShippingSubdivisions] = useState<
+    LocaleListSubdivisionsResponse['subdivisions'] | {}
+  >({});
   const [selectedSubdivision, setSelectedSubdivision] = useState('');
 
   async function fetchShippingSubdivisions(countryCode: string) {
