@@ -5,6 +5,7 @@ import { commerce } from 'lib/commerce';
 import { useCartContext } from 'context/cart';
 import type { LineItem } from '@chec/commerce.js/types/line-item';
 import type { Cart } from '@chec/commerce.js/types/cart';
+import { XCircle, ArrowLeft, ArrowRight } from 'components/icons';
 
 interface CartType {
   cart: Cart;
@@ -68,16 +69,7 @@ export default function CartItem({
         className="p-2 lg:p-4 border-2 border-green-900 hover:bg-green-900 hover:text-white focus-visible:bg-green-900 focus-visible:text-white rounded-full hidden md:inline-block"
         aria-label="Remove product"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-        </svg>
+        <XCircle />
       </button>
       <div>
         <Image
@@ -127,15 +119,7 @@ export default function CartItem({
                 onClick={decrementQuantity}
                 className="inline-flex items-center justify-center text-2xl focus:outline-none transition"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="-64 0 512 512"
-                  className="fill-green-900"
-                >
-                  <path d="M365.46 357.74L147.04 255.89l218.47-101.88c16.02-7.47 22.95-26.51 15.48-42.53l-13.52-29C360 66.46 340.96 59.53 324.94 67L18.48 209.91a32.014 32.014 0 0 0-18.48 29v34.24c0 12.44 7.21 23.75 18.48 29l306.31 142.83c16.06 7.49 35.15.54 42.64-15.52l13.56-29.08c7.49-16.06.54-35.15-15.53-42.64z" />
-                </svg>
+                <ArrowLeft />
               </button>
               <span className="px-6 md:text-xl font-bold text-green-900">
                 {quantity}
@@ -144,15 +128,7 @@ export default function CartItem({
                 onClick={incrementQuantity}
                 className="inline-flex items-center justify-center text-2xl focus:outline-none transition"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="-64 0 512 512"
-                  className="fill-green-900"
-                >
-                  <path d="M365.52 209.85L59.22 67.01c-16.06-7.49-35.15-.54-42.64 15.52L3.01 111.61c-7.49 16.06-.54 35.15 15.52 42.64L236.96 256.1 18.49 357.99C2.47 365.46-4.46 384.5 3.01 400.52l13.52 29C24 445.54 43.04 452.47 59.06 445l306.47-142.91a32.003 32.003 0 0 0 18.48-29v-34.23c-.01-12.45-7.21-23.76-18.49-29.01z" />
-                </svg>
+                <ArrowRight />
               </button>
             </div>
             <div className="md:text-2xl text-lg">
