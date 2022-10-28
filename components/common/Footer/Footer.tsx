@@ -18,12 +18,12 @@ export default function Footer() {
               <h3 className="text-xl">company</h3>
               <ul className="space-y-4 text-sm" role="list">
                 <li>
-                  <Link href="/">
+                  <Link href="/about">
                     <a>about</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/">
+                  <Link href="/careers">
                     <a>careers</a>
                   </Link>
                 </li>
