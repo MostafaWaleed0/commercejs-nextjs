@@ -11,29 +11,31 @@ export default function ProductSlider({ product }: Props) {
   const handleCurrentSlide = (e: number) => setCurrentSlide(e);
 
   return (
-    <div className="sticky top-0 w-full lg:w-3/5 lg:pb-8">
-      <div className="flex lg:self-start lg:justify-end">
+    <div className="w-full lg:w-3/5 lg:pb-8">
+      <div className="flex flex-col-reverse md:flex-row lg:self-start lg:justify-end">
         <ul
           role="list"
-          className="flex flex-col gap-2 w-1/5 lg:h-full overflow-auto"
+          className="flex flex-row md:flex-col  gap-2 w-1/5 lg:h-full overflow-auto"
         >
           {product.assets?.map((image, i) => (
             <li
               key={image.url}
-              className={`grid mb-3 h-fit border-2 focus-visible:border-green-900 outline-none cursor-pointer ${
-                currentSlide === i ? 'border-green-900' : 'border-white'
+              className={`w-7 h-7 md:h-fit md:w-fit rounded-full md:rounded-none mt-5 md:mt-0 md:mb-3 border-2 focus-visible:border-green-900 outline-none cursor-pointer ${
+                currentSlide === i ? 'border-green-900' : 'border-neutral-300'
               }`}
               onClick={() => handleCurrentSlide(i)}
-              onKeyDown={() => handleCurrentSlide(i)}
+              // onKeyDown={() => handleCurrentSlide(i)}
               tabIndex={0}
               aria-label={`Appearance ${i + 1}`}
             >
-              <Image src={image.url} width={200} height={300} />
+              <div className="hidden md:grid">
+                <Image src={image.url} width={200} height={300} />
+              </div>
             </li>
           ))}
         </ul>
-        <div className="lg:w-5/6 pl-6">
-          <div className="h-[95vh] w-full">
+        <div className="lg:w-5/6 pl-0 md:pl-6">
+          <div className="w-full">
             {product.assets?.map((image, i) => {
               return (
                 <div

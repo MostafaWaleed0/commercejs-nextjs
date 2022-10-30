@@ -51,7 +51,7 @@ export default function Permalink({
   ) : (
     <Container>
       <div className="container py-20">
-        <div className="flex flex-col justify-center items-start lg:flex-row gap-6 xl:gap-10 relative ">
+        <div className="flex flex-col justify-center items-start lg:flex-row gap-5 xl:gap-10 relative">
           <ProductSlider product={product} />
           <ProductDetails product={product} />
         </div>
