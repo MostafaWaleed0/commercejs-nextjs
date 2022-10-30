@@ -29,7 +29,8 @@ export default function ProductOptions({
               >
                 {variant.options.map((option) => (
                   <li key={option.id}>
-                    <div
+                    <button
+                      type="button"
                       className={`button h-12 w-full py-2 px-1 ring-1 cursor-pointer ${
                         selectedOptions[variant.id] &&
                         selectedOptions[variant.id] === option.id
@@ -42,12 +43,10 @@ export default function ProductOptions({
                           ? true
                           : false
                       }
-                      tabIndex={0}
                       onClick={() => onSelectOption(variant.id, option.id)}
-                      onKeyDown={() => onSelectOption(variant.id, option.id)}
                     >
                       {option.name}
-                    </div>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -67,7 +66,8 @@ export default function ProductOptions({
               >
                 {variant.options.map((option) => (
                   <li key={option.id}>
-                    <div
+                    <button
+                      type="button"
                       className={`w-11 h-11 mr-3 cursor-pointer ring-2 ring-offset-4 rounded-full ${
                         selectedOptions[variant.id] &&
                         selectedOptions[variant.id] === option.id
@@ -81,12 +81,10 @@ export default function ProductOptions({
                           : false
                       }
                       style={{ backgroundColor: option.name }}
-                      tabIndex={0}
                       onClick={() => onSelectOption(variant.id, option.id)}
-                      onKeyDown={() => onSelectOption(variant.id, option.id)}
                     >
                       <span className="sr-only">{option.name} color</span>
-                    </div>
+                    </button>
                   </li>
                 ))}
               </ul>

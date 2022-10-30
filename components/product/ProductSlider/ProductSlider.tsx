@@ -23,14 +23,17 @@ export default function ProductSlider({ product }: Props) {
               className={`w-7 h-7 md:h-fit md:w-fit rounded-full md:rounded-none mt-5 md:mt-0 md:mb-3 border-2 focus-visible:border-green-900 outline-none cursor-pointer ${
                 currentSlide === i ? 'border-green-900' : 'border-neutral-300'
               }`}
-              onClick={() => handleCurrentSlide(i)}
-              // onKeyDown={() => handleCurrentSlide(i)}
-              tabIndex={0}
-              aria-label={`Appearance ${i + 1}`}
             >
-              <div className="hidden md:grid">
-                <Image src={image.url} width={200} height={300} />
-              </div>
+              <button
+                type="button"
+                onClick={() => handleCurrentSlide(i)}
+                aria-label={`Appearance ${i + 1}`}
+                className="w-full h-full grid"
+              >
+                <div className="hidden md:grid">
+                  <Image src={image.url} width={200} height={300} />
+                </div>
+              </button>
             </li>
           ))}
         </ul>
