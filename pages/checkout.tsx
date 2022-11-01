@@ -1,4 +1,3 @@
-import { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import CheckoutView from 'components/checkout/CheckoutView/CheckoutView';
 import Container from 'components/common/Container';
 
