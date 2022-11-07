@@ -48,7 +48,7 @@ export const contactValidate = ({
     errors.reason = 'Reason for contact is required';
   }
 
-  if (details.length < 1000) {
+  if (details.length > 1000) {
     errors.details = "Your details can't be more than 1000 characters";
   }
 
