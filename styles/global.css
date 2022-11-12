@@ -335,6 +335,10 @@
   h3 {
     @apply lg:text-3xl text-xl leading-tight font-semibold capitalize;
   }
+
+  img {
+    height: revert-layer;
+  }
 }
 
 #__next {

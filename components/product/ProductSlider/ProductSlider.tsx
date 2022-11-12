@@ -31,7 +31,12 @@ export default function ProductSlider({ product }: Props) {
                 className="w-full h-full grid"
               >
                 <div className="hidden md:grid">
-                  <Image src={image.url} width={200} height={300} />
+                  <Image
+                    src={image.url}
+                    width={200}
+                    height={300}
+                    alt={product.name}
+                  />
                 </div>
               </button>
             </li>
@@ -47,7 +52,12 @@ export default function ProductSlider({ product }: Props) {
                     currentSlide === i ? 'flex' : 'hidden'
                   }`}
                 >
-                  <Image src={image.url} width={700} height={850} />
+                  <Image
+                    src={image.url}
+                    width={700}
+                    height={850}
+                    alt={product.name}
+                  />
                 </div>
               );
             })}

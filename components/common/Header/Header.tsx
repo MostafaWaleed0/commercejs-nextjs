@@ -27,10 +27,8 @@ export default function Header() {
       <div className="container">
         <div className="flex flex-col">
           <div className="flex items-center	justify-between gap-2">
-            <Link href="/">
-              <a aria-label="Plant Life">
-                <Logo />
-              </a>
+            <Link href="/" aria-label="Plant Life">
+              <Logo />
             </Link>
             <nav
               aria-label="primary"
@@ -44,19 +42,13 @@ export default function Header() {
                 role="list"
               >
                 <li className="m-3">
-                  <Link href="/categories/plants">
-                    <a>plants</a>
-                  </Link>
+                  <Link href="/categories/plants">plants</Link>
                 </li>
                 <li className="m-3">
-                  <Link href="/categories/plant-care">
-                    <a>tools</a>
-                  </Link>
+                  <Link href="/categories/plant-care">tools</Link>
                 </li>
                 <li className="m-3">
-                  <Link href="/guides">
-                    <a>guides</a>
-                  </Link>
+                  <Link href="/guides">guides</Link>
                 </li>
               </ul>
             </nav>
@@ -80,16 +72,14 @@ export default function Header() {
                   <Autocomplete handleClose={closeSearch} ref={dialog} />
                 )}
               </div>
-              <Link href="/cart">
-                <a className="relative ml-6" aria-label="">
-                  <span
-                    className="absolute -top-2.5 -right-2.5 text-xsm rounded-full bg-green-900 w-6 h-6 text-white grid place-items-center ring-4 ring-white"
-                    aria-hidden={true}
-                  >
-                    {total_unique_items}
-                  </span>
-                  <Bag />
-                </a>
+              <Link href="/cart" className="relative ml-6" aria-label="">
+                <span
+                  className="absolute -top-2.5 -right-2.5 text-xsm rounded-full bg-green-900 w-6 h-6 text-white grid place-items-center ring-4 ring-white"
+                  aria-hidden={true}
+                >
+                  {total_unique_items}
+                </span>
+                <Bag />
               </Link>
               <div className="flex justify-end items-center lg:hidden">
                 <button

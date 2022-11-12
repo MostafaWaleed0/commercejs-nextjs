@@ -8,9 +8,9 @@ export default function Footer() {
       role="contentinfo"
     >
       <div className="container">
-        <div className="flex items-start flex-wrap justify-between capitalize">
+        <div className="flex items-start flex-col lg:flex-row gap-5 justify-between capitalize">
           <nav
-            className="flex items-start justify-between capitalize gap-20"
+            className="flex items-start justify-between flex-wrap capitalize gap-20"
             aria-label="secondary"
             tabIndex={-1}
           >
@@ -18,19 +18,13 @@ export default function Footer() {
               <h3 className="text-xl">company</h3>
               <ul className="space-y-4 text-sm" role="list">
                 <li>
-                  <Link href="/about">
-                    <a>about</a>
-                  </Link>
+                  <Link href="/about">about</Link>
                 </li>
                 <li>
-                  <Link href="/careers">
-                    <a>careers</a>
-                  </Link>
+                  <Link href="/careers">careers</Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>our guarantee</a>
-                  </Link>
+                  <Link href="/">our guarantee</Link>
                 </li>
               </ul>
             </div>
@@ -38,17 +32,13 @@ export default function Footer() {
               <h3 className="text-xl">support</h3>
               <ul className="space-y-4 text-sm" role="list">
                 <li>
-                  <Link href="/contact">
-                    <a>contact</a>
-                  </Link>
+                  <Link href="/contact">contact</Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>FAQs</a>
-                  </Link>
+                  <Link href="/">FAQs</Link>
                 </li>
                 <li>
-                  <a href="">Returns and Delivery</a>
+                  <Link href="/">Returns and Delivery</Link>
                 </li>
               </ul>
             </div>
@@ -56,24 +46,18 @@ export default function Footer() {
               <h3 className="text-xl">terms</h3>
               <ul className="space-y-4 text-sm" role="list">
                 <li>
-                  <Link href="/">
-                    <a>Terms of Service</a>
-                  </Link>
+                  <Link href="/">Terms of Service</Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>Privacy Policy</a>
-                  </Link>
+                  <Link href="/">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>Cookies</a>
-                  </Link>
+                  <Link href="/">Cookies</Link>
                 </li>
               </ul>
             </div>
           </nav>
-          <div className="space-y-9">
+          <div className="space-y-9 max-w-full">
             <h3>subscribe to get latest updates</h3>
             <form
               className="flex items-end justify-end h-16 border border-white rounded overflow-hidden"

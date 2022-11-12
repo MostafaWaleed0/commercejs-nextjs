@@ -28,17 +28,16 @@ export default function GuidesPage({
         <ol className="auto-grid" role="list">
           {articles.map((article) => (
             <Link href={`guides/${article.permalink}`}>
-              <a>
-                <li>
-                  <Image
-                    src={article.image?.url || placeholderImage}
-                    width={300}
-                    height={300}
-                    className="object-cover"
-                  />
-                  <h3>{article.name}</h3>
-                </li>
-              </a>
+              <li>
+                <Image
+                  src={article.image?.url || placeholderImage}
+                  width={300}
+                  height={300}
+                  className="object-cover"
+                  alt={''}
+                />
+                <h3>{article.name}</h3>
+              </li>
             </Link>
           ))}
         </ol>

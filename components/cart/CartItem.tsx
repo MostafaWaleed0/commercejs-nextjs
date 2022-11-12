@@ -73,11 +73,12 @@ export default function CartItem({
       </button>
       <div>
         <Image
-          src={image.url}
+          src={image?.url || '/static/images/placeholder-image.bmp'}
           width={190}
           height={190}
           className="rounded-2xl object-cover"
           unoptimized
+          alt={name}
         />
       </div>
       <div className="flex flex-col md:flex-row md:items-end flex-grow space-y-1 md:space-y-0 md:space-x-3">

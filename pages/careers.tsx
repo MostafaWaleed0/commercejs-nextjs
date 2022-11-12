@@ -15,8 +15,8 @@ export default function Careers() {
           voluptas reiciendis tenetur, esse sapiente, repudiandae voluptatum cum
           voluptatibus et suscipit eaque!
         </p>
-        <Link href="">
-          <a className="button button-big">open position</a>
+        <Link href="" className="button button-big">
+          open position
         </Link>
       </Banner>
       <article className="container region flex flex-col md:flex-row justify-between">

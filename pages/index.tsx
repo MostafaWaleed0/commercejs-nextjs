@@ -47,17 +47,19 @@ export default function Home({
               impedit quod porro optio, blanditiis non possimus eum saepe
               corrupti maiores obcaecati rerum?
             </p>
-            <Link href="categories/plants">
-              <a className="button button-big bg-white text-green-800">
-                Shop all plants
-              </a>
+            <Link
+              href="categories/plants"
+              className="button button-big bg-white text-green-800"
+            >
+              Shop all plants
             </Link>
           </article>
           <div className="absolute -z-10 w-full h-full">
             <Image
               src="/static/images/scott-webb-oRWRlTgBrPo-unsplash.jpg"
               className="w-full h-full object-cover object-[20%_75%]"
-              layout="fill"
+              fill
+              alt={''}
             />
           </div>
         </section>
@@ -99,9 +101,7 @@ export default function Home({
         <section className="container region space-y-14">
           <header className="flex justify-between	items-center">
             <h2>featured</h2>
-            <Link href="/categories/plants">
-              <a className="">view all</a>
-            </Link>
+            <Link href="/categories/plants">view all</Link>
           </header>
           <ProductList products={products_plants} />
         </section>
@@ -127,9 +127,7 @@ export default function Home({
         <section className="container region space-y-14">
           <header className="flex justify-between	items-center">
             <h2>plant care</h2>
-            <Link href="/categories/plant-care">
-              <a className="">view all</a>
-            </Link>
+            <Link href="/categories/plant-care">view all</Link>
           </header>
           <ProductList products={products_equipment} />
         </section>
@@ -144,16 +142,17 @@ export default function Home({
                   corrupti cumque! Ea molestias saepe voluptates impedit rem
                   adipisci tempora ab illum fugiat expedita.
                 </p>
-                <Link href="/rewards">
-                  <a className="button button-big"> Learn More</a>
+                <Link href="/rewards" className="button button-big">
+                  Learn More
                 </Link>
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 relative">
               <Image
                 src="/static/images/Bathroom_Sinks.jpg"
-                height={100}
-                layout="fill"
+                height={730}
+                width={950}
+                className="w-full h-full"
                 alt="Plants and mirrors"
                 title="Plants and mirrors"
               />

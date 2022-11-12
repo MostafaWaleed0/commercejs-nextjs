@@ -1,5 +1,5 @@
 import { FormEvent } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe, StripeElements } from '@stripe/stripe-js';
 import {
   Elements,
   CardElement,
@@ -7,7 +7,7 @@ import {
 } from '@stripe/react-stripe-js';
 import { toast } from 'react-hot-toast';
 import { ShippingAddressFormType } from 'lib/types';
-import { StripeElements, Stripe } from '@stripe/stripe-js';
+import { Stripe } from '@stripe/stripe-js/types/stripe-js/stripe';
 import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import type { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
 
@@ -37,8 +37,8 @@ export default function PaymentForm({
 }: Props) {
   async function handleSubmit(
     e: FormEvent<HTMLFormElement>,
-    elements: StripeElements | null,
-    stripe: Stripe | null
+    elements: StripeElements,
+    stripe: Stripe
   ) {
     e.preventDefault();
 

@@ -24,8 +24,9 @@ export default function Banner({ title, image, children }: Props) {
       <div className="absolute -z-10 w-full h-full ">
         <Image
           src={`/static/images/${image}`}
-          className="object-cover w-full min-h-[20rem] object-[66%,35%]"
-          layout="fill"
+          className="object-cover w-full h-full object-[66%,35%]"
+          fill
+          alt={''}
         />
       </div>
     </section>

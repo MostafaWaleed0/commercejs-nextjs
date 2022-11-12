@@ -42,13 +42,12 @@ export default function Cart() {
                 Total: <span>{subtotal?.formatted_with_symbol}</span>
               </div>
               <div>
-                <Link href="/checkout">
-                  <a
-                    type="button"
-                    className="button bg-white text-green-900  w-full text-lg md:text-xl"
-                  >
-                    check out
-                  </a>
+                <Link
+                  href="/checkout"
+                  type="button"
+                  className="button bg-white text-green-900  w-full text-lg md:text-xl"
+                >
+                  check out
                 </Link>
               </div>
             </div>

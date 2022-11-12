@@ -159,31 +159,32 @@ function ProductItem({ item }: ProductItemType) {
 
   return (
     <li className="rounded-md bg-white p-3 text-green-900 ">
-      <Link href={`/product/${item.permalink}`}>
-        <a className="flex justify-between items-center ">
-          <div className="rounded-md overflow-hidden">
-            <img src={item.image?.url} alt={item.name} width={90} height={90} />
-          </div>
-          <div className="w-56">
-            <div className="text-2xl">{item.name}</div>
-            <div className="flex items-center">
-              <span className="text-lg mr-3">
-                <Price price={getPrice({ selectedOptions, product: item })} />
-              </span>
-              <div className="flex items-center gap-2 ">
-                {item.variant_groups.map((variant_group) => {
-                  if (variant_group.name === 'color')
-                    return variant_group.options.map((options) => (
-                      <div
-                        className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-5 h-5"
-                        style={{ backgroundColor: `${options.name}` }}
-                      ></div>
-                    ));
-                })}
-              </div>
+      <Link
+        href={`/product/${item.permalink}`}
+        className="flex justify-between items-center"
+      >
+        <div className="rounded-md overflow-hidden">
+          <img src={item.image?.url} alt={item.name} width={90} height={90} />
+        </div>
+        <div className="w-56">
+          <div className="text-2xl">{item.name}</div>
+          <div className="flex items-center">
+            <span className="text-lg mr-3">
+              <Price price={getPrice({ selectedOptions, product: item })} />
+            </span>
+            <div className="flex items-center gap-2 ">
+              {item.variant_groups.map((variant_group) => {
+                if (variant_group.name === 'color')
+                  return variant_group.options.map((options) => (
+                    <div
+                      className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-5 h-5"
+                      style={{ backgroundColor: `${options.name}` }}
+                    ></div>
+                  ));
+              })}
             </div>
           </div>
-        </a>
+        </div>
       </Link>
     </li>
   );

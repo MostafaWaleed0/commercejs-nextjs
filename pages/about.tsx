@@ -88,6 +88,7 @@ export default function About() {
             className="rounded-2xl"
             width={450}
             height={450}
+            alt="Company owner"
           />
         </div>
         <div className="w-full md:w-4/12 space-y-4">
@@ -116,6 +117,7 @@ export default function About() {
             className="rounded-2xl"
             width={450}
             height={450}
+            alt="Home delivery of plants"
           />
         </div>
       </article>
@@ -126,6 +128,7 @@ export default function About() {
             className="rounded-2xl object-cover"
             width={450}
             height={450}
+            alt={''}
           />
         </div>
         <div className="w-full md:w-4/12 space-y-4">
@@ -152,11 +155,12 @@ export default function About() {
                   <li className="bg-green-50 text-center px-6 py-10 rounded-3xl font-raisonne space-y-4">
                     <Image
                       src={`/static/images/about-us/${item.image}`}
-                      className="rounded-full object-cover"
+                      className="rounded-full object-cover mx-auto"
                       width={120}
                       height={120}
+                      alt={''}
                     />
-                    <span className="block ">{item.job}</span>
+                    <span className="block">{item.job}</span>
                     <h3>{item.name}</h3>
                     <ul
                       className="flex justify-center items-center gap-5 text-orange-600"
@@ -164,23 +168,17 @@ export default function About() {
                     >
                       <li>
                         <Link href={item.social_media.facebook}>
-                          <a>
-                            <Facebook />
-                          </a>
+                          <Facebook />
                         </Link>
                       </li>
                       <li>
                         <Link href={item.social_media.twitter}>
-                          <a>
-                            <Twitter />
-                          </a>
+                          <Twitter />
                         </Link>
                       </li>
                       <li>
                         <Link href={item.social_media.mail}>
-                          <a>
-                            <Mail />
-                          </a>
+                          <Mail />
                         </Link>
                       </li>
                     </ul>
