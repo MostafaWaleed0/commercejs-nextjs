@@ -32,7 +32,7 @@ export default function ProductCard({ product }: Props) {
         />
         <div className="space-y-8 mt-2">
           <div className="flex justify-between items-center font-bold">
-            <h3 className="text-base font-raisonne line-clamp-2">
+            <h3 className="text-base font-raisonne line-clamp-2 w-56">
               {product.name}
             </h3>
             <Price price={getPrice({ selectedOptions, product })} />
