@@ -57,6 +57,7 @@ export default function ProductSlider({ product }: Props) {
                     width={700}
                     height={850}
                     alt={product.name}
+                    className="h-fit"
                   />
                 </div>
               );
