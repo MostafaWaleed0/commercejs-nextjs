@@ -6,9 +6,9 @@ import {
   useReducer
 } from 'react';
 
-interface State {
+type State = {
   displaySearch: boolean;
-}
+};
 
 const initialState = {
   displaySearch: false
