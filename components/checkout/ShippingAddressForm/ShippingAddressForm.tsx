@@ -29,7 +29,7 @@ export default function ShippingAddressForm({
   >({});
   const [selectedCountry, setSelectedCountry] = useState('');
 
-  async function fetchShippingCountries(checkoutTokenId: string) {
+  const fetchShippingCountries = async (checkoutTokenId: string) => {
     if (checkoutTokenId) {
       const { countries } = await commerce.services.localeListShippingCountries(
         checkoutTokenId
@@ -37,7 +37,7 @@ export default function ShippingAddressForm({
       setShippingCountries(countries);
       setSelectedCountry(Object.keys(countries)[0]);
     }
-  }
+  };
 
   useEffect(() => {
     fetchShippingCountries(checkoutToken?.id || '');
@@ -53,13 +53,13 @@ export default function ShippingAddressForm({
   >({});
   const [selectedSubdivision, setSelectedSubdivision] = useState('');
 
-  async function fetchShippingSubdivisions(countryCode: string) {
+  const fetchShippingSubdivisions = async (countryCode: string) => {
     const { subdivisions } = await commerce.services.localeListSubdivisions(
       countryCode
     );
     setSelectedSubdivision(Object.keys(subdivisions)[0]);
     setShippingSubdivisions(subdivisions);
-  }
+  };
 
   useEffect(() => {
     selectedCountry && fetchShippingSubdivisions(selectedCountry);
@@ -96,7 +96,7 @@ export default function ShippingAddressForm({
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: { preventDefault: () => void }) {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const errors = checkoutValidate(values);
     if (errors && Object.keys(errors).length > 0) return setErrors(errors);
@@ -105,33 +105,33 @@ export default function ShippingAddressForm({
     setLoading(true);
     getShippingData(values);
     setLoading(false);
-  }
+  };
 
-  async function handleChange(e: {
+  const handleChange = async (e: {
     target: {
       name: string;
       value: SetStateAction<string>;
     };
-  }) {
+  }) => {
     setValues((prevInput) => ({
       ...prevInput,
       [e.target.name]: e.target.value
     }));
-  }
+  };
 
-  function handleSelectedCountry(e: {
+  const handleSelectedCountry = (e: {
     target: { name: string; value: SetStateAction<string> };
-  }) {
+  }) => {
     handleChange(e);
     setSelectedCountry(e.target.value);
-  }
+  };
 
-  function handleSelectedSubdivisions(e: {
+  const handleSelectedSubdivisions = (e: {
     target: { name: string; value: SetStateAction<string> };
-  }) {
+  }) => {
     handleChange(e);
     setSelectedSubdivision(e.target.value);
-  }
+  };
 
   return (
     <div className="space-y-10 flex flex-col w-full">

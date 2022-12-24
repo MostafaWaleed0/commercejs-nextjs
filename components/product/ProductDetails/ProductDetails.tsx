@@ -32,14 +32,13 @@ export default function ProductDetails({ product }: Props) {
     setSelectedOptions(options({ product }));
   }, [product.permalink]);
 
-  function handleSelectOption(variantId: string, optionId: string) {
+  const handleSelectOption = (variantId: string, optionId: string) =>
     setSelectedOptions({
       ...selectedOptions,
       [variantId]: optionId
     });
-  }
 
-  function handleAddToCart() {
+  const handleAddToCart = () =>
     commerce.cart
       .add(product.id, 1, selectedOptions)
       .then(({ cart }) => {
@@ -54,7 +53,6 @@ export default function ProductDetails({ product }: Props) {
       .catch(() => {
         toast.error('Please try again.');
       });
-  }
 
   return (
     <article className="space-y-12 w-full lg:w-2/5 flex flex-col">

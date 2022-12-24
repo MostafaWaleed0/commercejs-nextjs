@@ -1,10 +1,4 @@
-import {
-  useEffect,
-  MutableRefObject,
-  Dispatch,
-  SetStateAction,
-  useCallback
-} from 'react';
+import { useEffect, MutableRefObject, Dispatch, SetStateAction } from 'react';
 
 export default function useMediaQuery(
   query: number,
@@ -14,9 +8,7 @@ export default function useMediaQuery(
 ): boolean {
   const media = window.matchMedia(`(max-width:${query}px)`);
 
-  function handleChange() {
-    setVisible(false);
-  }
+  const handleChange = () => setVisible(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -24,11 +16,11 @@ export default function useMediaQuery(
         handleChange();
         if (!visible) return;
 
-        function handleClick(e) {
+        const handleClick = (e: any) => {
           if (element.current && !element.current.contains(e.target)) {
             setVisible(false);
           }
-        }
+        };
         window.addEventListener('click', handleClick);
         return () => window.removeEventListener('click', handleClick);
       }

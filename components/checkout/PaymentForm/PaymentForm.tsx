@@ -35,11 +35,11 @@ export default function PaymentForm({
   nextStep,
   timeout
 }: Props) {
-  async function handleSubmit(
+  const handleSubmit = async (
     e: FormEvent<HTMLFormElement>,
     elements: StripeElements,
     stripe: Stripe
-  ) {
+  ) => {
     e.preventDefault();
 
     if (!stripe || !elements) return;
@@ -89,7 +89,7 @@ export default function PaymentForm({
     onCaptureCheckout(checkoutToken?.id || '', orderData);
     timeout();
     nextStep();
-  }
+  };
 
   return (
     <>

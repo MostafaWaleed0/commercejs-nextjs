@@ -71,9 +71,7 @@ const list = [
 export default function About() {
   const [limit, setLimit] = useState(4);
 
-  function showMoreItems() {
-    setLimit(limit + 5);
-  }
+  const showMoreItems = () => setLimit(limit + 5);
 
   return (
     <Container>

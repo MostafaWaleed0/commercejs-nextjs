@@ -1,3 +1,3 @@
-export default function convertToText(Text: string) {
+export const convertToText = (Text: string) => {
   return (Text || '').replace(/(<([^>]+)>)/gi, '');
-}
+};

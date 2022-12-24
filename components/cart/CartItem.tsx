@@ -22,12 +22,12 @@ export default function CartItem({
   const { setCart } = useCartContext();
   const hasVariants = selected_options.length >= 1;
 
-  function handleUpdateCart({ cart }: CartType) {
+  const handleUpdateCart = ({ cart }: CartType) => {
     setCart(cart);
     return cart;
-  }
+  };
 
-  function handleRemoveItem() {
+  const handleRemoveItem = () =>
     commerce.cart
       .remove(id)
       .then(handleUpdateCart)
@@ -36,9 +36,8 @@ export default function CartItem({
           `${name} has been removed from your cart. Your new subtotal is now ${subtotal.formatted_with_symbol}`
         )
       );
-  }
 
-  function decrementQuantity() {
+  const decrementQuantity = () =>
     quantity > 1
       ? commerce.cart
           .update(id, { quantity: quantity - 1 })
@@ -49,9 +48,8 @@ export default function CartItem({
             )
           )
       : handleRemoveItem();
-  }
 
-  function incrementQuantity() {
+  const incrementQuantity = () =>
     commerce.cart
       .update(id, { quantity: quantity + 1 })
       .then(handleUpdateCart)
@@ -60,7 +58,6 @@ export default function CartItem({
           `Another "${name}" has been added to your cart. Your new subtotal is now ${subtotal.formatted_with_symbol}`
         )
       );
-  }
 
   return (
     <div className="py-3 md:py-4 lg:py-5 flex items-center space-x-3 md:space-x-4 border-b border-black relative">

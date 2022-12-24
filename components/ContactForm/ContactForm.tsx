@@ -29,7 +29,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: { preventDefault: () => void }) {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const errors = contactValidate(values);
     if (errors && Object.keys(errors).length > 0) {
@@ -57,16 +57,16 @@ export default function ContactForm() {
     //   });
 
     // setLoading(false);
-  }
+  };
 
-  async function handleChange(e: {
+  const handleChange = async (e: {
     preventDefault: () => void;
     target: {
       name: string;
       getAttribute: (arg: string) => any;
       value: string;
     };
-  }) {
+  }) => {
     e.preventDefault();
     if (!e.target.name) {
       setValues((prevInput) => ({
@@ -80,7 +80,7 @@ export default function ContactForm() {
         [e.target.name]: e.target.value
       }));
     }
-  }
+  };
 
   return (
     <form className="space-y-10">

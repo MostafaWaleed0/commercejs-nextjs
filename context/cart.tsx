@@ -58,7 +58,7 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-function CartProvider({ children }: CartProviderProps) {
+const CartProvider = ({ children }: CartProviderProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const getCart = useCallback(async () => {
@@ -94,14 +94,14 @@ function CartProvider({ children }: CartProviderProps) {
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-function useCartContext() {
+const useCartContext = () => {
   const context = useContext<CartStateContextType>(CartContext);
   if (context === undefined) {
     throw new Error(`useCartContext must be used within a CartProvider`);
   }
   return context;
-}
+};
 
 export { useCartContext, CartProvider };

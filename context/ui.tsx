@@ -22,7 +22,7 @@ type Action = { type: 'SHOW_SEARCH' } | { type: 'CLOSE_SEARCH' };
 
 const UIContext = createContext<State | any>(initialState);
 
-function reducer(state: State, action: Action) {
+const reducer = (state: State, action: Action) => {
   switch (action.type) {
     case SHOW_SEARCH: {
       return {
@@ -37,9 +37,9 @@ function reducer(state: State, action: Action) {
       };
     }
   }
-}
+};
 
-function UIProvider({ children }: UIProviderProps) {
+const UIProvider = ({ children }: UIProviderProps) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const openSearch = useCallback(
@@ -62,14 +62,14 @@ function UIProvider({ children }: UIProviderProps) {
   );
 
   return <UIContext.Provider value={value}>{children}</UIContext.Provider>;
-}
+};
 
-function useUI() {
+const useUI = () => {
   const context = useContext(UIContext);
   if (context === undefined) {
     throw new Error(`useUI must be used within a UIProvider`);
   }
   return context;
-}
+};
 
 export { UIProvider, useUI };

@@ -19,7 +19,7 @@ export default function CheckoutView() {
   const [isFinished, setIsFinished] = useState(false);
   const router = useRouter();
 
-  async function generateToken() {
+  const generateToken = async () => {
     try {
       const token = await commerce.checkout.generateToken(id, {
         type: 'cart'
@@ -29,20 +29,20 @@ export default function CheckoutView() {
     } catch (error) {
       error;
     }
-  }
+  };
 
-  async function refreshCart() {
+  const refreshCart = async () => {
     const newCart = await commerce.cart.refresh();
     setCart(newCart);
-  }
+  };
 
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
   const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
-  async function onCaptureCheckout(
+  const onCaptureCheckout = async (
     checkoutTokenId: string,
     newOrder: CheckoutCapture
-  ) {
+  ) => {
     try {
       const incomingOrder: CheckoutCaptureResponse | undefined =
         await commerce.checkout.capture(checkoutTokenId, newOrder);
@@ -52,12 +52,12 @@ export default function CheckoutView() {
     } catch (error) {
       error;
     }
-  }
+  };
 
-  function getShippingData(data: ShippingAddressFormType) {
+  const getShippingData = (data: ShippingAddressFormType) => {
     setShippingData(data);
     nextStep();
-  }
+  };
 
   let Confirmation = () =>
     order?.customer ? (
@@ -93,12 +93,11 @@ export default function CheckoutView() {
     generateToken();
   }, [id]);
 
-  function timeout() {
+  const timeout = () =>
     setTimeout(() => {
       setIsFinished(true);
       refreshCart();
     }, 7000);
-  }
 
   const CheckoutStep = () => {
     switch (activeStep) {
