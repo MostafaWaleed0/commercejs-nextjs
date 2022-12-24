@@ -3,12 +3,7 @@ import { useRouter } from 'next/router';
 import { commerce } from 'lib/commerce';
 import { Container } from 'components/common';
 import { ProductDetails, ProductSlider } from 'components/product';
-
-type Params = {
-  params: {
-    permalink: string;
-  };
-};
+import type { Params } from 'lib/types';
 
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list();

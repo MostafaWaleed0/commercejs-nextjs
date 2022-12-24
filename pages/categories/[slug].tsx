@@ -3,19 +3,11 @@ import Search from 'components/search';
 import { Container } from 'components/common';
 import { Category } from '@chec/commerce.js/types/category';
 
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-
-  const category = await commerce.categories.retrieve(slug, {
-    type: 'slug'
-  });
-
-  return {
-    props: {
-      category
-    }
+type Slug = {
+  params: {
+    slug: string;
   };
-}
+};
 
 export async function getStaticPaths() {
   const { data: categories } = await commerce.categories.list();
@@ -28,6 +20,20 @@ export async function getStaticPaths() {
     })),
 
     fallback: false
+  };
+}
+
+export async function getStaticProps({ params }: Slug) {
+  const { slug } = params;
+
+  const category = await commerce.categories.retrieve(slug, {
+    type: 'slug'
+  });
+
+  return {
+    props: {
+      category
+    }
   };
 }
 

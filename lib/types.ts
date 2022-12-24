@@ -8,3 +8,9 @@ export interface ShippingAddressFormType {
   region: string;
   countries: string;
 }
+
+export type Params = {
+  params: {
+    permalink: string;
+  };
+};

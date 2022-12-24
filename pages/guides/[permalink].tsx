@@ -1,20 +1,7 @@
 import { Container } from 'components/common';
 import { commerce } from 'lib/commerce';
 import { InferGetStaticPropsType } from 'next';
-
-export async function getStaticProps({ params }) {
-  const { permalink } = params;
-
-  const article = await commerce.products.retrieve(permalink, {
-    type: 'permalink'
-  });
-
-  return {
-    props: {
-      article
-    }
-  };
-}
+import type { Params } from 'lib/types';
 
 export async function getStaticPaths() {
   const { data: articles } = await commerce.products.list({
@@ -28,6 +15,20 @@ export async function getStaticPaths() {
       }
     })),
     fallback: false
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  const { permalink } = params;
+
+  const article = await commerce.products.retrieve(permalink, {
+    type: 'permalink'
+  });
+
+  return {
+    props: {
+      article
+    }
   };
 }
 
