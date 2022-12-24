@@ -37,7 +37,6 @@
     "depcheck": "^1.4.3",
     "lint-staged": "^13.0.3",
     "next": "^13.0.3",
-    "next-auth": "4.16.4",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.19",
     "postcss-cli": "^10.0.0",

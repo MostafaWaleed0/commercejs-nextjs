@@ -2,12 +2,10 @@ import 'styles/global.css';
 // import * as gtag from 'lib/gtag';
 import { useEffect } from 'react';
 import { AppProps } from 'next/app';
-import { Session } from 'next-auth';
 import { UIProvider } from 'context/ui';
 import { CartProvider } from 'context/cart';
 import { ThemeProvider } from 'next-themes';
 import algoliasearch from 'algoliasearch/lite';
-import { SessionProvider } from 'next-auth/react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
 
@@ -16,13 +14,7 @@ const algoliaClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY
 );
 
-export default function MyApp({
-  Component,
-  pageProps,
-  router
-}: AppProps<{
-  session: Session;
-}>) {
+export default function MyApp({ Component, pageProps, router }: AppProps) {
   // useEffect(() => {
   //   const handleRouteChange = (url) => {
   //     gtag.pageview(url);
@@ -67,11 +59,9 @@ export default function MyApp({
       </Toaster>
       <CartProvider>
         <UIProvider>
-          <SessionProvider session={pageProps.session}>
-            <ThemeProvider defaultTheme="light">
-              <Component {...pageProps} />
-            </ThemeProvider>
-          </SessionProvider>
+          <ThemeProvider defaultTheme="light">
+            <Component {...pageProps} />
+          </ThemeProvider>
         </UIProvider>
       </CartProvider>
     </InstantSearch>
