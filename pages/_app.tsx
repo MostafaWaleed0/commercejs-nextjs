@@ -1,4 +1,4 @@
-import 'styles/output.css';
+import 'styles/global.css';
 // import * as gtag from 'lib/gtag';
 import { useEffect } from 'react';
 import { AppProps } from 'next/app';

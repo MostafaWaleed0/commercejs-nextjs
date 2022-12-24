@@ -7,9 +7,7 @@
     "build": "next build",
     "dev": "next dev",
     "lint-staged:test": "lint-staged",
-    "build:postcss": "postcss styles/output.css -u autoprefixer cssnano -r --no-map",
-    "unused": "npx depcheck",
-    "watch:tailwind": "npx tailwindcss -i styles/global.css -o styles/output.css --watch"
+    "unused": "npx depcheck"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
