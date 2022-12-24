@@ -1,5 +1,5 @@
 import { memo, useState } from 'react';
-import convertToText from 'utils/convertToText';
+import { convertToText } from 'utils';
 import { Plus, Minus } from 'components/icons';
 
 interface Props {
