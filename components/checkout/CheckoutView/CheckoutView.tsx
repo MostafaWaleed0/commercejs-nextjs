@@ -6,7 +6,7 @@ import { PaymentForm } from 'components/checkout';
 import { useCartContext } from 'context/cart';
 import { commerce } from 'lib/commerce';
 import { useRouter } from 'next/router';
-import { SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ShippingAddressFormType } from 'lib/types';
 import { Circle } from 'components/icons';
 
@@ -54,13 +54,13 @@ export default function CheckoutView() {
     }
   }
 
-  function getShippingData(data: SetStateAction<ShippingAddressFormType>) {
+  function getShippingData(data: ShippingAddressFormType) {
     setShippingData(data);
     nextStep();
   }
 
   let Confirmation = () =>
-    order.customer ? (
+    order?.customer ? (
       <>
         <div>
           <h2>Thank you for your purchase, {order.customer.firstname}</h2>
@@ -74,7 +74,7 @@ export default function CheckoutView() {
     ) : isFinished ? (
       <>
         <div>
-          <h2>Thank you for your purchase, {shippingData.firstName}!</h2>
+          <h2>Thank you for your purchase, {shippingData?.firstName}!</h2>
           <p>Order ref: </p>
           <br />
           <button type="button" onClick={() => router.push('/')}>
@@ -129,7 +129,7 @@ export default function CheckoutView() {
 
   return (
     <div>
-      <div className={`${activeStep === 3 && 'hidden'}`}>
+      <div className={`${activeStep === 3 ? 'hidden' : ''}`}>
         <span className="font-bold">Checkout</span>
         <span className="mx-2"> &gt; </span>
         <span className={`${activeStep === 2 && 'font-bold'}`}>

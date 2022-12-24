@@ -12,14 +12,14 @@ import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import type { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
 
 const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
 
 interface Props {
-  checkoutToken: CheckoutToken;
+  checkoutToken?: CheckoutToken;
   nextStep: () => void;
   backStep: () => void;
-  shippingData: ShippingAddressFormType;
+  shippingData?: ShippingAddressFormType;
   timeout(): void;
   onCaptureCheckout(
     checkoutTokenId: string,
@@ -48,7 +48,7 @@ export default function PaymentForm({
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
-      card: cardElement
+      card: cardElement!
     });
 
     if (error)
@@ -65,10 +65,10 @@ export default function PaymentForm({
       zip,
       region,
       countries
-    } = shippingData;
+    } = shippingData!;
 
     const orderData = {
-      line_items: checkoutToken.live.line_items,
+      line_items: checkoutToken?.live.line_items,
       customer: { firstname: firstName, lastname: lastName, email },
       shipping: {
         name: 'Primary',
@@ -86,7 +86,7 @@ export default function PaymentForm({
       }
     };
 
-    onCaptureCheckout(checkoutToken.id, orderData);
+    onCaptureCheckout(checkoutToken?.id || '', orderData);
     timeout();
     nextStep();
   }
@@ -97,7 +97,7 @@ export default function PaymentForm({
       <Elements stripe={stripePromise}>
         <ElementsConsumer>
           {({ elements, stripe }) => (
-            <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
+            <form onSubmit={(e) => handleSubmit(e, elements!, stripe!)}>
               <CardElement className="h-10 border-b-2 border-green-900 my-10" />
               <div className="flex items-center justify-between">
                 <button
@@ -111,7 +111,7 @@ export default function PaymentForm({
                   type="submit"
                   disabled={!stripe}
                 >
-                  Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+                  Pay {checkoutToken?.live.subtotal.formatted_with_symbol}
                 </button>
               </div>
             </form>
