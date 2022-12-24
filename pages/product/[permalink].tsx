@@ -1,32 +1,14 @@
 import type { InferGetStaticPropsType } from 'next';
 import { useRouter } from 'next/router';
 import { commerce } from 'lib/commerce';
-import dynamic from 'next/dynamic';
 import { Container } from 'components/common';
+import { ProductDetails, ProductSlider } from 'components/product';
 
-const ProductDetails = dynamic(
-  () => import('components/product/ProductDetails'),
-  { ssr: false }
-);
-
-const ProductSlider = dynamic(
-  () => import('components/product/ProductSlider'),
-  { ssr: false }
-);
-
-export async function getStaticProps({ params }) {
-  const { permalink } = params;
-
-  const product = await commerce.products.retrieve(permalink, {
-    type: 'permalink'
-  });
-
-  return {
-    props: {
-      product
-    }
+type Params = {
+  params: {
+    permalink: string;
   };
-}
+};
 
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list();
@@ -38,6 +20,20 @@ export async function getStaticPaths() {
       }
     })),
     fallback: false
+  };
+}
+
+export async function getStaticProps({ params }: Params) {
+  const { permalink } = params;
+
+  const product = await commerce.products.retrieve(permalink, {
+    type: 'permalink'
+  });
+
+  return {
+    props: {
+      product
+    }
   };
 }
 
