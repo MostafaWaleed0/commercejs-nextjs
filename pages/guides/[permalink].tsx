@@ -2,6 +2,7 @@ import { Container } from 'components/common';
 import { commerce } from 'lib/commerce';
 import { InferGetStaticPropsType } from 'next';
 import type { Params } from 'lib/types';
+import dompurify from 'dompurify';
 
 export async function getStaticPaths() {
   const { data: articles } = await commerce.products.list({
@@ -35,13 +36,15 @@ export async function getStaticProps({ params }: Params) {
 export default function GuidesPosts({
   article
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const sanitizer = dompurify.sanitize;
+
   return (
     <Container>
       <article className="container region-md">
         <div className="post">
           <h1> {article.name}</h1>
           <div
-            dangerouslySetInnerHTML={{ __html: article.description }}
+            dangerouslySetInnerHTML={{ __html: sanitizer(article.description) }}
             className="post"
           ></div>
         </div>
