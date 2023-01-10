@@ -23,6 +23,7 @@
   "dependencies": {
     "@algolia/autocomplete-core": "^1.7.4",
     "@algolia/autocomplete-js": "^1.7.4",
+    "@algolia/client-search": "^4.14.3",
     "@chec/commerce.js": "^2.8.0",
     "@emailjs/browser": "^3.10.0",
     "@stripe/react-stripe-js": "^1.16.1",
