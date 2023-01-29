@@ -13,6 +13,7 @@ import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { getPrice, options } from 'utils';
 import { Price } from 'components/ui';
 import { Hit } from '@algolia/client-search';
+import Image from 'next/image';
 
 const searchClient = algoliasearch(
   'J455L6ETKV',
@@ -163,7 +164,7 @@ function ProductItem({ item }: ProductItemType) {
         className="flex justify-between items-center"
       >
         <div className="rounded-md overflow-hidden">
-          <img src={item.image?.url} alt={item.name} width={90} height={90} />
+          <Image src={item.image?.url} alt={item.name} width={90} height={90} />
         </div>
         <div className="w-56">
           <div className="text-2xl">{item.name}</div>
