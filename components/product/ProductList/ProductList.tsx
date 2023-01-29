@@ -13,7 +13,7 @@ export default function ProductList({ products }: Props) {
       style={{ '--auto-grid-min-size': '17rem' }}
     >
       {products.map((product) => (
-        <ProductCard product={product} />
+        <ProductCard product={product} key={product.name} />
       ))}
     </ul>
   );

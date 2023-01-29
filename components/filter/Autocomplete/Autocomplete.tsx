@@ -177,6 +177,7 @@ function ProductItem({ item }: ProductItemType) {
                 if (variant_group.name === 'color')
                   return variant_group.options.map((options) => (
                     <div
+                      key={options.name}
                       className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-5 h-5"
                       style={{ backgroundColor: `${options.name}` }}
                     ></div>

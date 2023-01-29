@@ -58,7 +58,7 @@ export default function CustomFormSelect({
           role="list"
         >
           {options.map((option) => (
-            <li>
+            <li key={option}>
               <hr className="mx-4" />
               <button
                 {...props}
