@@ -101,7 +101,6 @@ export default function Autocomplete({ handleClose, ref }: Props) {
               ref={inputRef}
               className="h-full w-full focus:outline-none xl:rounded-full"
               {...inputProps}
-              autoFocus
             />
             <button className="button" onClick={handleClose}>
               cancel
