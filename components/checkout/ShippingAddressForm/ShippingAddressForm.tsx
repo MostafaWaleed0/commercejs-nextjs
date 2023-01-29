@@ -148,7 +148,6 @@ export default function ShippingAddressForm({
               onChange={handleChange}
               error={!!errors.firstName}
               errorMessage={errors.firstName ? errors.firstName : ''}
-              autoFocus
             />
             <FormInput
               value={values.lastName}

@@ -13,6 +13,7 @@ import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { getPrice, options } from 'utils';
 import { Price } from 'components/ui';
 import { Hit } from '@algolia/client-search';
+import Image from 'next/image';
 
 const searchClient = algoliasearch(
   'J455L6ETKV',
@@ -101,7 +102,6 @@ export default function Autocomplete({ handleClose, ref }: Props) {
               ref={inputRef}
               className="h-full w-full focus:outline-none xl:rounded-full"
               {...inputProps}
-              autoFocus
             />
             <button className="button" onClick={handleClose}>
               cancel
@@ -164,7 +164,7 @@ function ProductItem({ item }: ProductItemType) {
         className="flex justify-between items-center"
       >
         <div className="rounded-md overflow-hidden">
-          <img src={item.image?.url} alt={item.name} width={90} height={90} />
+          <Image src={item.image?.url} alt={item.name} width={90} height={90} />
         </div>
         <div className="w-56">
           <div className="text-2xl">{item.name}</div>
@@ -177,6 +177,7 @@ function ProductItem({ item }: ProductItemType) {
                 if (variant_group.name === 'color')
                   return variant_group.options.map((options) => (
                     <div
+                      key={options.name}
                       className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-5 h-5"
                       style={{ backgroundColor: `${options.name}` }}
                     ></div>

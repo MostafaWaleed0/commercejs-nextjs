@@ -7,7 +7,7 @@ export default function Bag({ ...props }) {
       x={0}
       y={0}
       viewBox="0 0 1000 1000"
-      enable-background="new 0 0 1000 1000"
+      enableBackground="new 0 0 1000 1000"
       xmlSpace="preserve"
       width={30}
       height={30}
