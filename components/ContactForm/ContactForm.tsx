@@ -29,7 +29,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const errors = contactValidate(values);
     if (errors && Object.keys(errors).length > 0) {
@@ -59,7 +59,7 @@ export default function ContactForm() {
     // setLoading(false);
   };
 
-  const handleChange = async (e: {
+  const handleChange = (e: {
     preventDefault: () => void;
     target: {
       name: string;
