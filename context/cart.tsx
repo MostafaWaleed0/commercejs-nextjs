@@ -66,7 +66,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
       const cart = await commerce.cart.retrieve();
       dispatch({ type: SET_CART, cart: cart });
     } catch (err) {
-      err;
+      throw new Error(err);
     }
   }, [dispatch]);
 
