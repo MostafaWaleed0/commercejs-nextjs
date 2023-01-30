@@ -96,7 +96,7 @@ export default function ShippingAddressForm({
   const [errors, setErrors] = useState<IErrors>({});
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     const errors = checkoutValidate(values);
     if (errors && Object.keys(errors).length > 0) return setErrors(errors);
@@ -107,7 +107,7 @@ export default function ShippingAddressForm({
     setLoading(false);
   };
 
-  const handleChange = async (e: {
+  const handleChange = (e: {
     target: {
       name: string;
       value: SetStateAction<string>;

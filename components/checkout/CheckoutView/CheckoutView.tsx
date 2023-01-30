@@ -27,7 +27,7 @@ export default function CheckoutView() {
 
       setCheckoutToken(token);
     } catch (error) {
-      error;
+      throw new Error(error);
     }
   };
 
@@ -50,7 +50,7 @@ export default function CheckoutView() {
       setOrder(incomingOrder);
       refreshCart();
     } catch (error) {
-      error;
+      throw new Error(error);
     }
   };
 

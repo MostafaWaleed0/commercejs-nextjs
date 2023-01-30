@@ -58,6 +58,7 @@ export default function Contact() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title="Google Maps"
+        sandbox="allow-scripts"
       />
     </Container>
   );
