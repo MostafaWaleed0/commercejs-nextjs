@@ -92,7 +92,7 @@ export default function ContactForm() {
           label="first name"
           require
           onChange={handleChange}
-          error={!!errors.firstName}
+          error={Boolean(errors.firstName)}
           errorMessage={errors.firstName ? errors.firstName : ''}
         />
         <FormInput
@@ -102,7 +102,7 @@ export default function ContactForm() {
           label="last name"
           require
           onChange={handleChange}
-          error={!!errors.lastName}
+          error={Boolean(errors.lastName)}
           errorMessage={errors.lastName ? errors.lastName : ''}
         />
       </div>
@@ -114,7 +114,7 @@ export default function ContactForm() {
           label="email address"
           require
           onChange={handleChange}
-          error={!!errors.email}
+          error={Boolean(errors.email)}
           errorMessage={errors.email ? errors.email : ''}
         />
         <FormInput
@@ -124,7 +124,7 @@ export default function ContactForm() {
           label="phone number"
           require
           onChange={handleChange}
-          error={!!errors.phone}
+          error={Boolean(errors.phone)}
           errorMessage={errors.phone ? errors.phone : ''}
         />
       </div>
@@ -152,7 +152,7 @@ export default function ContactForm() {
             'Other'
           ]}
           onClick={handleChange}
-          error={!!errors.reason}
+          error={Boolean(errors.reason)}
           errorMessage={errors.reason ? errors.reason : ''}
         />
       </div>
@@ -162,7 +162,7 @@ export default function ContactForm() {
           id="details"
           label="add any details or information"
           onChange={handleChange}
-          error={!!errors.details}
+          error={Boolean(errors.details)}
           errorMessage={errors.details ? errors.details : ''}
         />
       </div>
