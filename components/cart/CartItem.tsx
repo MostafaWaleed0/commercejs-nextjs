@@ -65,6 +65,7 @@ export default function CartItem({
         onClick={handleRemoveItem}
         className="p-2 lg:p-4 border-2 border-green-900 hover:bg-green-900 hover:text-white focus-visible:bg-green-900 focus-visible:text-white rounded-full hidden md:inline-block"
         aria-label="Remove product"
+        type="button"
       >
         <XCircle />
       </button>
@@ -116,6 +117,7 @@ export default function CartItem({
               <button
                 onClick={decrementQuantity}
                 className="inline-flex items-center justify-center text-2xl focus:outline-none transition"
+                type="button"
               >
                 <ArrowLeft />
               </button>
@@ -125,6 +127,7 @@ export default function CartItem({
               <button
                 onClick={incrementQuantity}
                 className="inline-flex items-center justify-center text-2xl focus:outline-none transition"
+                type="button"
               >
                 <ArrowRight />
               </button>

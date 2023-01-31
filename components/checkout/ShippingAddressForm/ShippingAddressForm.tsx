@@ -240,6 +240,7 @@ export default function ShippingAddressForm({
             <button
               className="button button-big"
               onClick={() => router.push('/')}
+              type="button"
             >
               back
             </button>
@@ -247,6 +248,7 @@ export default function ShippingAddressForm({
               className="button button-big"
               disabled={loading}
               onClick={handleSubmit}
+              type="submit"
             >
               next
             </button>

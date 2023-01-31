@@ -169,6 +169,7 @@ export default function ContactForm() {
       <div>
         <button
           className="button button-big w-full"
+          type="submit"
           disabled={loading}
           onClick={handleSubmit}
         >

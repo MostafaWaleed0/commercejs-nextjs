@@ -31,6 +31,7 @@ export default function Search({ title, category, colors, categories }: Props) {
                   <button
                     className="button button-outline-small"
                     onClick={() => setShowFilter((e) => !e)}
+                    type="button"
                   >
                     {showFilter ? 'hide filter' : 'show filter'}
                   </button>

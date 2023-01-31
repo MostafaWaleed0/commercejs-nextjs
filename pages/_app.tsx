@@ -47,6 +47,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   <button
                     className="pl-3 border-l border-neutral-300 text-xl"
                     onClick={() => toast.dismiss(t.id)}
+                    type="button"
                   >
                     X
                   </button>

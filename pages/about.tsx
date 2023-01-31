@@ -186,7 +186,11 @@ export default function About() {
             })}
           </ol>
           <div className="text-center">
-            <button className="button button-big" onClick={showMoreItems}>
+            <button
+              className="button button-big"
+              onClick={showMoreItems}
+              type="button"
+            >
               show more
             </button>
           </div>

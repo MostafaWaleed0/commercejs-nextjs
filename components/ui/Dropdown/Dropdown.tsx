@@ -22,6 +22,7 @@ export default memo(function Dropdown({
           className="w-full h-full  capitalize font-semibold text-xl text-start"
           aria-expanded={isActive ? true : false}
           onClick={toggle}
+          type="button"
         >
           {title}
         </button>

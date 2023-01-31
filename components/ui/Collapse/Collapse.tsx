@@ -21,6 +21,7 @@ export default memo(function Collapse({ order, description, title }: Props) {
           onClick={toggle}
           aria-controls={`accordion-panel-${order}`}
           id={`accordion-header-${order}`}
+          type="button"
         >
           {title}
         </button>
