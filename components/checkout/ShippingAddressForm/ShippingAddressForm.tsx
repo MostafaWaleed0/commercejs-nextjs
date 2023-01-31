@@ -144,7 +144,7 @@ export default function ShippingAddressForm({
               type="text"
               id="firstName"
               label="first name"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.firstName}
               errorMessage={errors.firstName ? errors.firstName : ''}
@@ -154,7 +154,7 @@ export default function ShippingAddressForm({
               type="text"
               id="lastName"
               label="last name"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.lastName}
               errorMessage={errors.lastName ? errors.lastName : ''}
@@ -166,7 +166,7 @@ export default function ShippingAddressForm({
               type="text"
               id="address"
               label="address"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.address}
               errorMessage={errors.address ? errors.address : ''}
@@ -176,7 +176,7 @@ export default function ShippingAddressForm({
               type="email"
               id="email"
               label="email address"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.email}
               errorMessage={errors.email ? errors.email : ''}
@@ -188,7 +188,7 @@ export default function ShippingAddressForm({
               type="text"
               id="city"
               label="city"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.city}
               errorMessage={errors.city ? errors.city : ''}
@@ -198,7 +198,7 @@ export default function ShippingAddressForm({
               type="text"
               id="zip"
               label="zip"
-              require={true}
+              require
               onChange={handleChange}
               error={!!errors.zip}
               errorMessage={errors.zip ? errors.zip : ''}
@@ -208,7 +208,7 @@ export default function ShippingAddressForm({
             <FormSelect
               name="countries"
               label="countries"
-              require={true}
+              require
               onChange={handleSelectedCountry}
               error={!!errors.countries}
               errorMessage={errors.countries ? errors.countries : ''}
@@ -223,7 +223,7 @@ export default function ShippingAddressForm({
             <FormSelect
               name="region"
               label="region"
-              require={true}
+              require
               onChange={handleSelectedSubdivisions}
               error={!!errors.region}
               errorMessage={errors.region ? errors.region : ''}

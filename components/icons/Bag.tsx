@@ -12,7 +12,7 @@ export default function Bag({ ...props }) {
       width={30}
       height={30}
       focusable={false}
-      aria-hidden={true}
+      aria-hidden
       className="fill-green-900"
       {...props}
     >

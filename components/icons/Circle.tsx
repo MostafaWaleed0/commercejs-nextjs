@@ -1,7 +1,7 @@
 export default function Circle({ ...props }) {
   return (
     <svg
-      aria-hidden={true}
+      aria-hidden
       focusable={false}
       className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
       xmlns="http://www.w3.org/2000/svg"

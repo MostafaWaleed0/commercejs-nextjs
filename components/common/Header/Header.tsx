@@ -75,7 +75,7 @@ export default function Header() {
               <Link href="/cart" className="relative ml-6" aria-label="">
                 <span
                   className="absolute -top-2.5 -right-2.5 text-xsm rounded-full bg-green-900 w-6 h-6 text-white grid place-items-center ring-4 ring-white"
-                  aria-hidden={true}
+                  aria-hidden
                 >
                   {total_unique_items}
                 </span>

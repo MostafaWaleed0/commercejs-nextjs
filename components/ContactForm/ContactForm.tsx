@@ -90,7 +90,7 @@ export default function ContactForm() {
           type="text"
           id="firstName"
           label="first name"
-          require={true}
+          require
           onChange={handleChange}
           error={!!errors.firstName}
           errorMessage={errors.firstName ? errors.firstName : ''}
@@ -100,7 +100,7 @@ export default function ContactForm() {
           type="text"
           id="lastName"
           label="last name"
-          require={true}
+          require
           onChange={handleChange}
           error={!!errors.lastName}
           errorMessage={errors.lastName ? errors.lastName : ''}
@@ -112,7 +112,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           label="email address"
-          require={true}
+          require
           onChange={handleChange}
           error={!!errors.email}
           errorMessage={errors.email ? errors.email : ''}
@@ -122,7 +122,7 @@ export default function ContactForm() {
           type="text"
           id="phone"
           label="phone number"
-          require={true}
+          require
           onChange={handleChange}
           error={!!errors.phone}
           errorMessage={errors.phone ? errors.phone : ''}
@@ -133,7 +133,7 @@ export default function ContactForm() {
           value={values.reason}
           name="reason"
           label="reason for contact"
-          require={true}
+          require
           options={[
             'Order status',
             'Update shipping address',
