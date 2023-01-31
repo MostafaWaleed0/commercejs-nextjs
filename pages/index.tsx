@@ -169,10 +169,10 @@ export default function Home({
               <figure className="space-y-4 p-7">
                 <blockquote>
                   <p>
-                    "I've ordered from a lot of plant stores, but this is the
-                    finest one! The delivery of my plants was quite quick. plant
-                    life answered my question immediately away, and they were
-                    really friendly"
+                    &quot; I&apos;ve ordered from a lot of plant stores, but
+                    this is the finest one! The delivery of my plants was quite
+                    quick. plant life answered my question immediately away, and
+                    they were really friendly &quot;
                   </p>
                 </blockquote>
                 <figcaption className="font-bold">John Wick</figcaption>
@@ -182,10 +182,10 @@ export default function Home({
               <figure className="space-y-4 p-7">
                 <blockquote>
                   <p>
-                    "I've ordered from a lot of plant stores, but this is the
-                    finest one! The delivery of my plants was quite quick. plant
-                    life answered my question immediately away, and they were
-                    really friendly"
+                    &quot; I&apos;ve ordered from a lot of plant stores, but
+                    this is the finest one! The delivery of my plants was quite
+                    quick. plant life answered my question immediately away, and
+                    they were really friendly &quot;
                   </p>
                 </blockquote>
                 <figcaption className="font-bold">John Wick</figcaption>
@@ -195,10 +195,10 @@ export default function Home({
               <figure className="space-y-4 p-7">
                 <blockquote>
                   <p>
-                    "I've ordered from a lot of plant stores, but this is the
-                    finest one! The delivery of my plants was quite quick. plant
-                    life answered my question immediately away, and they were
-                    really friendly"
+                    &quot; I&apos;ve ordered from a lot of plant stores, but
+                    this is the finest one! The delivery of my plants was quite
+                    quick. plant life answered my question immediately away, and
+                    they were really friendly &quot;
                   </p>
                 </blockquote>
                 <figcaption className="font-bold">John Wick</figcaption>
