@@ -70,7 +70,10 @@ export default function Footer() {
                 className="bg-transparent  outline-none py-5 px-6 h-16 w-96"
                 aria-label="email"
               />
-              <button className="button bg-white text-green-900 h-full rounded px-7">
+              <button
+                className="button bg-white text-green-900 h-full rounded px-7"
+                type="submit"
+              >
                 Subscribe
               </button>
             </form>

@@ -1,5 +1,5 @@
 // import emailjs from '@emailjs/browser';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { contactValidate } from 'utils';
 import FormTextArea from 'components/form/FormTextArea';
 import FormInput from 'components/form/FormInput';
@@ -90,9 +90,9 @@ export default function ContactForm() {
           type="text"
           id="firstName"
           label="first name"
-          require={true}
+          require
           onChange={handleChange}
-          error={!!errors.firstName}
+          error={Boolean(errors.firstName)}
           errorMessage={errors.firstName ? errors.firstName : ''}
         />
         <FormInput
@@ -100,9 +100,9 @@ export default function ContactForm() {
           type="text"
           id="lastName"
           label="last name"
-          require={true}
+          require
           onChange={handleChange}
-          error={!!errors.lastName}
+          error={Boolean(errors.lastName)}
           errorMessage={errors.lastName ? errors.lastName : ''}
         />
       </div>
@@ -112,9 +112,9 @@ export default function ContactForm() {
           type="email"
           id="email"
           label="email address"
-          require={true}
+          require
           onChange={handleChange}
-          error={!!errors.email}
+          error={Boolean(errors.email)}
           errorMessage={errors.email ? errors.email : ''}
         />
         <FormInput
@@ -122,9 +122,9 @@ export default function ContactForm() {
           type="text"
           id="phone"
           label="phone number"
-          require={true}
+          require
           onChange={handleChange}
-          error={!!errors.phone}
+          error={Boolean(errors.phone)}
           errorMessage={errors.phone ? errors.phone : ''}
         />
       </div>
@@ -133,7 +133,7 @@ export default function ContactForm() {
           value={values.reason}
           name="reason"
           label="reason for contact"
-          require={true}
+          require
           options={[
             'Order status',
             'Update shipping address',
@@ -152,7 +152,7 @@ export default function ContactForm() {
             'Other'
           ]}
           onClick={handleChange}
-          error={!!errors.reason}
+          error={Boolean(errors.reason)}
           errorMessage={errors.reason ? errors.reason : ''}
         />
       </div>
@@ -162,13 +162,14 @@ export default function ContactForm() {
           id="details"
           label="add any details or information"
           onChange={handleChange}
-          error={!!errors.details}
+          error={Boolean(errors.details)}
           errorMessage={errors.details ? errors.details : ''}
         />
       </div>
       <div>
         <button
           className="button button-big w-full"
+          type="submit"
           disabled={loading}
           onClick={handleSubmit}
         >

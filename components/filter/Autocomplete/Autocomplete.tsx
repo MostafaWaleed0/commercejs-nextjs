@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState
 } from 'react';
-import { createAutocomplete, GetSources } from '@algolia/autocomplete-core';
+import { createAutocomplete } from '@algolia/autocomplete-core';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { getPrice, options } from 'utils';
 import { Price } from 'components/ui';
@@ -103,7 +103,7 @@ export default function Autocomplete({ handleClose, ref }: Props) {
               className="h-full w-full focus:outline-none xl:rounded-full"
               {...inputProps}
             />
-            <button className="button" onClick={handleClose}>
+            <button className="button" onClick={handleClose} type="button">
               cancel
             </button>
           </div>

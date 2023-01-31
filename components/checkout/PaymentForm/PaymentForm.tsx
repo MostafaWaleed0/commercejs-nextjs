@@ -103,6 +103,7 @@ export default function PaymentForm({
                 <button
                   className="button button-big"
                   onClick={() => backStep()}
+                  type="button"
                 >
                   Back
                 </button>

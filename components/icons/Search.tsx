@@ -2,7 +2,7 @@ export default function Search({ ...props }) {
   return (
     <svg
       focusable={false}
-      aria-hidden={true}
+      aria-hidden
       viewBox="0 0 20 20"
       fill="currentColor"
       className="h-full py-2"

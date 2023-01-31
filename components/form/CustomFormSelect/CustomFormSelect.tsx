@@ -38,6 +38,7 @@ export default function CustomFormSelect({
     <div>
       <FormLabel id="reason" label={label} require={require} />
       <button
+        type="button"
         className="capitalize mt-3 py-4 text-black border-b-2 border-green-900 focus:border-green-500 w-full text-start"
         onClick={toggle}
         {...(error ? variableAttribute : '')}
@@ -65,6 +66,7 @@ export default function CustomFormSelect({
                 className="py-6 px-5 text-black hover:text-white hover:bg-green-600 focus-visible:text-white focus-visible:bg-green-600  w-full text-start"
                 data-value={option}
                 data-name={name}
+                type="button"
               >
                 {option}
               </button>

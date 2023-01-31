@@ -73,8 +73,8 @@ export default function ProductDetails({ product }: Props) {
       </div>
       <div className="flex items-center justify-between gap-2">
         <button
-          type="button"
           className="button button-big w-full"
+          type="submit"
           onClick={handleAddToCart}
         >
           Add to cart

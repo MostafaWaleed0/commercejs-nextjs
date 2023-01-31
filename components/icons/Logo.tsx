@@ -2,7 +2,7 @@ export default function Logo({ ...props }) {
   return (
     <svg
       focusable={false}
-      aria-hidden={true}
+      aria-hidden
       xmlns="http://www.w3.org/2000/svg"
       width={130}
       height={50}

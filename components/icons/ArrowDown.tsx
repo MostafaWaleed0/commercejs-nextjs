@@ -1,7 +1,7 @@
 export default function ArrowDown({ ...props }) {
   return (
     <svg
-      aria-hidden={true}
+      aria-hidden
       focusable={false}
       width={12}
       height={12}

@@ -144,9 +144,9 @@ export default function ShippingAddressForm({
               type="text"
               id="firstName"
               label="first name"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.firstName}
+              error={Boolean(errors.firstName)}
               errorMessage={errors.firstName ? errors.firstName : ''}
             />
             <FormInput
@@ -154,9 +154,9 @@ export default function ShippingAddressForm({
               type="text"
               id="lastName"
               label="last name"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.lastName}
+              error={Boolean(errors.lastName)}
               errorMessage={errors.lastName ? errors.lastName : ''}
             />
           </div>
@@ -166,9 +166,9 @@ export default function ShippingAddressForm({
               type="text"
               id="address"
               label="address"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.address}
+              error={Boolean(errors.address)}
               errorMessage={errors.address ? errors.address : ''}
             />
             <FormInput
@@ -176,9 +176,9 @@ export default function ShippingAddressForm({
               type="email"
               id="email"
               label="email address"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.email}
+              error={Boolean(errors.email)}
               errorMessage={errors.email ? errors.email : ''}
             />
           </div>
@@ -188,9 +188,9 @@ export default function ShippingAddressForm({
               type="text"
               id="city"
               label="city"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.city}
+              error={Boolean(errors.city)}
               errorMessage={errors.city ? errors.city : ''}
             />
             <FormInput
@@ -198,9 +198,9 @@ export default function ShippingAddressForm({
               type="text"
               id="zip"
               label="zip"
-              require={true}
+              require
               onChange={handleChange}
-              error={!!errors.zip}
+              error={Boolean(errors.zip)}
               errorMessage={errors.zip ? errors.zip : ''}
             />
           </div>
@@ -208,9 +208,9 @@ export default function ShippingAddressForm({
             <FormSelect
               name="countries"
               label="countries"
-              require={true}
+              require
               onChange={handleSelectedCountry}
-              error={!!errors.countries}
+              error={Boolean(errors.countries)}
               errorMessage={errors.countries ? errors.countries : ''}
               value={selectedCountry}
             >
@@ -223,9 +223,9 @@ export default function ShippingAddressForm({
             <FormSelect
               name="region"
               label="region"
-              require={true}
+              require
               onChange={handleSelectedSubdivisions}
-              error={!!errors.region}
+              error={Boolean(errors.region)}
               errorMessage={errors.region ? errors.region : ''}
               value={selectedSubdivision}
             >
@@ -240,6 +240,7 @@ export default function ShippingAddressForm({
             <button
               className="button button-big"
               onClick={() => router.push('/')}
+              type="button"
             >
               back
             </button>
@@ -247,6 +248,7 @@ export default function ShippingAddressForm({
               className="button button-big"
               disabled={loading}
               onClick={handleSubmit}
+              type="submit"
             >
               next
             </button>

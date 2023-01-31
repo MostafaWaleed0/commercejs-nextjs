@@ -2,7 +2,7 @@ export default function Plus({ ...props }) {
   return (
     <svg
       focusable={false}
-      aria-hidden={true}
+      aria-hidden
       viewBox="0 0 24 24"
       width={24}
       height={24}

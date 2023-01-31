@@ -59,7 +59,7 @@ export default function CheckoutView() {
     nextStep();
   };
 
-  let Confirmation = () =>
+  const Confirmation = () =>
     order?.customer ? (
       <>
         <div>
