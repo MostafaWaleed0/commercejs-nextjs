@@ -1,6 +1,5 @@
 import 'styles/global.css';
 // import * as gtag from 'lib/gtag';
-import { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { UIProvider } from 'context/ui';
 import { CartProvider } from 'context/cart';
@@ -14,7 +13,7 @@ const algoliaClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_ONLY_API_KEY
 );
 
-export default function MyApp({ Component, pageProps, router }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   // useEffect(() => {
   //   const handleRouteChange = (url) => {
   //     gtag.pageview(url);

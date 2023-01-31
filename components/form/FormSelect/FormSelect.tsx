@@ -23,8 +23,6 @@ export default function FormSelect({
   children,
   ...props
 }: Props) {
-  const variableAttribute = { [variablePropName]: variablePropValue };
-
   return (
     <div>
       <FormLabel id="reason" label={label} require={require} />

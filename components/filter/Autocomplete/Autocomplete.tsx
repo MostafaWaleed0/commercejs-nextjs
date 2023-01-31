@@ -8,7 +8,7 @@ import React, {
   useRef,
   useState
 } from 'react';
-import { createAutocomplete, GetSources } from '@algolia/autocomplete-core';
+import { createAutocomplete } from '@algolia/autocomplete-core';
 import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { getPrice, options } from 'utils';
 import { Price } from 'components/ui';
