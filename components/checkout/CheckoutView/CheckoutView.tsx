@@ -61,27 +61,23 @@ export default function CheckoutView() {
 
   const Confirmation = () =>
     order?.customer ? (
-      <>
-        <div>
-          <h2>Thank you for your purchase, {order.customer.firstname}</h2>
-          <p>Order ref: {order.customer_reference}</p>
-          <br />
-          <button type="button" onClick={() => router.push('/')}>
-            Back to Home
-          </button>
-        </div>
-      </>
+      <div>
+        <h2>Thank you for your purchase, {order.customer.firstname}</h2>
+        <p>Order ref: {order.customer_reference}</p>
+        <br />
+        <button type="button" onClick={() => router.push('/')}>
+          Back to Home
+        </button>
+      </div>
     ) : isFinished ? (
-      <>
-        <div>
-          <h2>Thank you for your purchase, {shippingData?.firstName}!</h2>
-          <p>Order ref: </p>
-          <br />
-          <button type="button" onClick={() => router.push('/')}>
-            Back to Home
-          </button>
-        </div>
-      </>
+      <div>
+        <h2>Thank you for your purchase, {shippingData?.firstName}!</h2>
+        <p>Order ref: </p>
+        <br />
+        <button type="button" onClick={() => router.push('/')}>
+          Back to Home
+        </button>
+      </div>
     ) : (
       <button type="button" className="button button-big" disabled>
         <Circle />
