@@ -19,6 +19,8 @@ export default function Header() {
   const matchesSearch = useMediaQuery(0, dialog, displaySearch, openSearch);
   const matchesNav = useMediaQuery(1024, nav, toggle, setToggle);
 
+  const handleToggle = () => setToggle((x) => !x);
+
   return (
     <header
       role="banner"
@@ -84,7 +86,7 @@ export default function Header() {
               <div className="flex justify-end items-center lg:hidden">
                 <button
                   type="button"
-                  onClick={() => setToggle((x) => !x)}
+                  onClick={handleToggle}
                   aria-label="Toggle menu"
                 >
                   <a className="relative ml-6" aria-label="">

@@ -59,13 +59,15 @@ export default function CheckoutView() {
     nextStep();
   };
 
+  const pushRouter = () => router.push('/');
+
   const Confirmation = () =>
     order?.customer ? (
       <div>
         <h2>Thank you for your purchase, {order.customer.firstname}</h2>
         <p>Order ref: {order.customer_reference}</p>
         <br />
-        <button type="button" onClick={() => router.push('/')}>
+        <button type="button" onClick={pushRouter}>
           Back to Home
         </button>
       </div>
@@ -74,7 +76,7 @@ export default function CheckoutView() {
         <h2>Thank you for your purchase, {shippingData?.firstName}!</h2>
         <p>Order ref: </p>
         <br />
-        <button type="button" onClick={() => router.push('/')}>
+        <button type="button" onClick={pushRouter}>
           Back to Home
         </button>
       </div>
