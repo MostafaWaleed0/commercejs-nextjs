@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import type { Product } from '@chec/commerce.js/types/product';
 
 interface Props {
@@ -8,7 +8,10 @@ interface Props {
 
 export default function ProductSlider({ product }: Props) {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
-  const handleCurrentSlide = (e: number) => setCurrentSlide(e);
+  const handleCurrentSlide = useCallback(
+    (e: number) => () => setCurrentSlide(e),
+    []
+  );
 
   return (
     <div className="w-full lg:w-3/5 lg:pb-8">
@@ -26,7 +29,7 @@ export default function ProductSlider({ product }: Props) {
             >
               <button
                 type="button"
-                onClick={() => handleCurrentSlide(i)}
+                onClick={handleCurrentSlide(i)}
                 aria-label={`Appearance ${i + 1}`}
                 className="w-full h-full grid"
               >

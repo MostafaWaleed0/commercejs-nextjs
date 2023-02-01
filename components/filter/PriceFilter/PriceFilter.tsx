@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { useNumericMenu } from 'react-instantsearch-hooks-web';
 
 type NumericMenuItem = {
@@ -19,6 +20,8 @@ export default function PriceFilter() {
     ]
   });
 
+  const handleRefine = useCallback((value: string) => () => refine(value), []);
+
   return (
     <div>
       <ul>
@@ -29,7 +32,7 @@ export default function PriceFilter() {
                 className="w-7 h-7 accent-green-600"
                 type="checkbox"
                 checked={item.isRefined}
-                onClick={() => refine(item.value)}
+                onClick={handleRefine(item.value)}
               />
               <span className="inline-block tracking-widest capitalize ml-2">
                 {item.label}

@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import algoliasearch from 'algoliasearch/lite';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
+import { useCallback } from 'react';
 
 const algoliaClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
@@ -25,6 +26,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   //     router.events.off('routeChangeComplete', handleRouteChange);
   //   };
   // }, [router.events]);
+
+  const handleToggleDismissToast = useCallback(
+    (id: string) => () => toast.dismiss(id),
+    []
+  );
 
   return (
     <InstantSearch searchClient={algoliaClient} indexName="products">
@@ -46,7 +52,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 {t.type !== 'loading' && (
                   <button
                     className="pl-3 border-l border-neutral-300 text-xl"
-                    onClick={() => toast.dismiss(t.id)}
+                    onClick={handleToggleDismissToast(t.id)}
                     type="button"
                   >
                     X

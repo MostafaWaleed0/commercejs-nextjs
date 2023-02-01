@@ -133,6 +133,8 @@ export default function ShippingAddressForm({
     setSelectedSubdivision(e.target.value);
   };
 
+  const pushRouter = () => router.push('/');
+
   return (
     <div className="space-y-10 flex flex-col w-full">
       <h2>Your Details</h2>
@@ -239,7 +241,7 @@ export default function ShippingAddressForm({
           <div className="flex justify-between items-center">
             <button
               className="button button-big"
-              onClick={() => router.push('/')}
+              onClick={pushRouter}
               type="button"
             >
               back

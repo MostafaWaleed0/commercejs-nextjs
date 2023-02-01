@@ -1,5 +1,5 @@
 import { Hits, SortBy, Configure } from 'react-instantsearch-hooks-web';
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import useMediaQuery from 'hook/useMediaQuery';
 import { FilterView, Hit } from 'components/filter';
 
@@ -14,6 +14,8 @@ export default function Search({ title, category, colors, categories }: Props) {
   const filter = useRef(null);
   const [showFilter, setShowFilter] = useState<boolean>(true);
   const matches = useMediaQuery(1024, filter, showFilter, setShowFilter);
+
+  const handleShowFilter = useCallback(() => setShowFilter((e) => !e), []);
 
   return (
     <div className="container region-md">
@@ -30,7 +32,7 @@ export default function Search({ title, category, colors, categories }: Props) {
                 <div className="block">
                   <button
                     className="button button-outline-small"
-                    onClick={() => setShowFilter((e) => !e)}
+                    onClick={handleShowFilter}
                     type="button"
                   >
                     {showFilter ? 'hide filter' : 'show filter'}

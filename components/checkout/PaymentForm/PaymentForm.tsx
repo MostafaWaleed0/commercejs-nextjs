@@ -102,7 +102,7 @@ export default function PaymentForm({
               <div className="flex items-center justify-between">
                 <button
                   className="button button-big"
-                  onClick={() => backStep()}
+                  onClick={backStep}
                   type="button"
                 >
                   Back

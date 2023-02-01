@@ -1,4 +1,5 @@
 import type { ProductVariantGroup } from '@chec/commerce.js/types/product-variant-group';
+import { useCallback } from 'react';
 
 interface Props {
   variants: ProductVariantGroup[];
@@ -13,6 +14,12 @@ export default function ProductOptions({
   selectedOptions,
   ...passthrough
 }: Props) {
+  const handleOnSelectOption = useCallback(
+    (variantId: string, optionId: string) => () =>
+      onSelectOption(variantId, optionId),
+    []
+  );
+
   return (
     <div {...passthrough} className="space-y-12">
       {variants.map((variant) => {
@@ -43,7 +50,7 @@ export default function ProductOptions({
                           ? true
                           : false
                       }
-                      onClick={() => onSelectOption(variant.id, option.id)}
+                      onClick={handleOnSelectOption(variant.id, option.id)}
                     >
                       {option.name}
                     </button>
@@ -81,7 +88,7 @@ export default function ProductOptions({
                           : false
                       }
                       style={{ backgroundColor: option.name }}
-                      onClick={() => onSelectOption(variant.id, option.id)}
+                      onClick={handleOnSelectOption(variant.id, option.id)}
                     >
                       <span className="sr-only">{option.name} color</span>
                     </button>
