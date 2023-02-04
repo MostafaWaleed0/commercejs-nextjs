@@ -23,8 +23,8 @@ export default function ProductOptions({
   return (
     <div {...passthrough} className="space-y-12">
       {variants.map((variant) => {
-        if (variant.name === 'size')
-          return (
+        return (
+          variant.name === 'size' && (
             <div key={variant.id} className="space-y-4">
               <h3 className="text-2xl italic">{variant.name}:</h3>
               <ul
@@ -58,12 +58,13 @@ export default function ProductOptions({
                 ))}
               </ul>
             </div>
-          );
+          )
+        );
       })}
 
       {variants.map((variant) => {
-        if (variant.name === 'color')
-          return (
+        return (
+          variant.name === 'color' && (
             <div key={variant.id} className="space-y-4">
               <h3 className="text-2xl italic">{variant.name}:</h3>
               <ul
@@ -96,7 +97,8 @@ export default function ProductOptions({
                 ))}
               </ul>
             </div>
-          );
+          )
+        );
       })}
     </div>
   );

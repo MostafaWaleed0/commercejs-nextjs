@@ -148,41 +148,40 @@ export default function About() {
             style={{ '--auto-grid-min-size': '26rem' }}
           >
             {list.map((item, index) => {
-              if (index < limit)
-                return (
-                  <li className="bg-green-50 text-center px-6 py-10 rounded-3xl font-raisonne space-y-4">
-                    <Image
-                      src={`/static/images/about-us/${item.image}`}
-                      className="rounded-full object-cover mx-auto"
-                      width={120}
-                      height={120}
-                      alt={''}
-                    />
-                    <span className="block">{item.job}</span>
-                    <h3>{item.name}</h3>
-                    <ul
-                      className="flex justify-center items-center gap-5 text-orange-600"
-                      role="list"
-                    >
-                      <li>
-                        <Link href={item.social_media.facebook}>
-                          <Facebook />
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href={item.social_media.twitter}>
-                          <Twitter />
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href={item.social_media.mail}>
-                          <Mail />
-                        </Link>
-                      </li>
-                    </ul>
-                    <p className="px-6 text-gray-700">{item.description}</p>
-                  </li>
-                );
+              return index < limit ? (
+                <li className="bg-green-50 text-center px-6 py-10 rounded-3xl font-raisonne space-y-4">
+                  <Image
+                    src={`/static/images/about-us/${item.image}`}
+                    className="rounded-full object-cover mx-auto"
+                    width={120}
+                    height={120}
+                    alt={''}
+                  />
+                  <span className="block">{item.job}</span>
+                  <h3>{item.name}</h3>
+                  <ul
+                    className="flex justify-center items-center gap-5 text-orange-600"
+                    role="list"
+                  >
+                    <li>
+                      <Link href={item.social_media.facebook}>
+                        <Facebook />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={item.social_media.twitter}>
+                        <Twitter />
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={item.social_media.mail}>
+                        <Mail />
+                      </Link>
+                    </li>
+                  </ul>
+                  <p className="px-6 text-gray-700">{item.description}</p>
+                </li>
+              ) : null;
             })}
           </ol>
           <div className="text-center">

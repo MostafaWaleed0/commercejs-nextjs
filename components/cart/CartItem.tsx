@@ -86,17 +86,17 @@ export default function CartItem({
           </h3>
           {hasVariants && (
             <div className="flex items-center gap-3 md:text-lg text-md font-raisonne capitalize leading-10 md:mt-3">
-              {selected_options.map((item) => {
-                if (item.group_name === 'size')
-                  return (
+              {selected_options.map(
+                (item) =>
+                  item.group_name === 'size' && (
                     <div className="flex items-center">
                       size:<span className="ml-1">{item.option_name}</span>
                     </div>
-                  );
-              })}
-              {selected_options.map((item) => {
-                if (item.group_name === 'color')
-                  return (
+                  )
+              )}
+              {selected_options.map(
+                (item) =>
+                  item.group_name === 'color' && (
                     <div className="flex items-center">
                       <span>color:</span>
                       <div
@@ -106,8 +106,8 @@ export default function CartItem({
                         <span className="sr-only">{item.option_name}</span>
                       </div>
                     </div>
-                  );
-              })}
+                  )
+              )}
             </div>
           )}
         </div>

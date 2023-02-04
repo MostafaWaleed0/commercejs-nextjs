@@ -38,16 +38,17 @@ export default function ProductCard({ product }: Props) {
             <Price price={getPrice({ selectedOptions, product })} />
           </div>
           <div className="flex justify items-end gap-2">
-            {product.variant_groups.map((variant_group) => {
-              if (variant_group.name === 'color')
-                return variant_group.options.map((options) => (
+            {product.variant_groups.map(
+              (variant_group) =>
+                variant_group.name === 'color' &&
+                variant_group.options.map((options) => (
                   <div
                     key={options.name}
                     className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-6 h-6"
                     style={{ backgroundColor: `${options.name}` }}
                   ></div>
-                ));
-            })}
+                ))
+            )}
           </div>
         </div>
       </Link>

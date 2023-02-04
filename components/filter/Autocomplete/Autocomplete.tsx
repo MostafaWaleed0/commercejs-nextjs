@@ -173,16 +173,17 @@ function ProductItem({ item }: ProductItemType) {
               <Price price={getPrice({ selectedOptions, product: item })} />
             </span>
             <div className="flex items-center gap-2 ">
-              {item.variant_groups.map((variant_group) => {
-                if (variant_group.name === 'color')
-                  return variant_group.options.map((options) => (
+              {item.variant_groups.map(
+                (variant_group) =>
+                  variant_group.name === 'color' &&
+                  variant_group.options.map((options) => (
                     <div
                       key={options.name}
                       className="rounded-full border border-gray-300 flex items-center justify-center p-1 w-5 h-5"
                       style={{ backgroundColor: `${options.name}` }}
                     ></div>
-                  ));
-              })}
+                  ))
+              )}
             </div>
           </div>
         </div>
