@@ -3,7 +3,6 @@ import 'styles/global.css';
 import { AppProps } from 'next/app';
 import { UIProvider } from 'context/ui';
 import { CartProvider } from 'context/cart';
-import { ThemeProvider } from 'next-themes';
 import algoliasearch from 'algoliasearch/lite';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
@@ -65,9 +64,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Toaster>
       <CartProvider>
         <UIProvider>
-          <ThemeProvider defaultTheme="light">
-            <Component {...pageProps} />
-          </ThemeProvider>
+          <Component {...pageProps} />
         </UIProvider>
       </CartProvider>
     </InstantSearch>
