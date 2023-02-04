@@ -89,7 +89,7 @@ export default function CartItem({
               {selected_options.map(
                 (item) =>
                   item.group_name === 'size' && (
-                    <div className="flex items-center">
+                    <div className="flex items-center" key={item.group_id}>
                       size:<span className="ml-1">{item.option_name}</span>
                     </div>
                   )
@@ -97,7 +97,7 @@ export default function CartItem({
               {selected_options.map(
                 (item) =>
                   item.group_name === 'color' && (
-                    <div className="flex items-center">
+                    <div className="flex items-center" key={item.group_id}>
                       <span>color:</span>
                       <div
                         className="w-6 h-6 border-2 border-neutral-300 rounded-full ml-1"
