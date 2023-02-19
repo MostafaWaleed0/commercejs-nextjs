@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import FormLabel from 'components/form/FormLabel';
+import { FormLabel } from 'components/form';
 
 interface Props {
   [x: string]: any;

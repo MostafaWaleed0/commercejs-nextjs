@@ -1,5 +1,5 @@
 import { Dropdown } from 'components/ui';
-import PriceFilter from 'components/filter/PriceFilter';
+import { PriceFilter } from 'components/filter';
 import {
   ClearRefinements,
   RefinementList

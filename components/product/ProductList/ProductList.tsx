@@ -1,5 +1,5 @@
-import ProductCard from 'components/product/ProductCard';
 import type { Product } from '@chec/commerce.js/types/product';
+import { ProductCard } from 'components/product';
 
 interface Props {
   products: Product[];

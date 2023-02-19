@@ -1,8 +1,7 @@
 import { CheckoutCaptureResponse } from '@chec/commerce.js/types/checkout-capture-response';
 import { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
 import { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
-import { ShippingAddressForm } from 'components/checkout';
-import { PaymentForm } from 'components/checkout';
+import { ShippingAddressForm, PaymentForm } from 'components/checkout';
 import { useCartContext } from 'context/cart';
 import { commerce } from 'lib/commerce';
 import { useRouter } from 'next/router';

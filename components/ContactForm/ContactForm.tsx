@@ -1,9 +1,7 @@
 // import emailjs from '@emailjs/browser';
+import { CustomFormSelect, FormInput, FormTextArea } from 'components/form';
 import { useState } from 'react';
 import { contactValidate } from 'utils';
-import FormTextArea from 'components/form/FormTextArea';
-import FormInput from 'components/form/FormInput';
-import CustomFormSelect from 'components/form/CustomFormSelect';
 
 interface IValues {
   firstName: string;

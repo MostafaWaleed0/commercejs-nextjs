@@ -1,5 +1,5 @@
-import CheckoutView from 'components/checkout/CheckoutView/CheckoutView';
-import Container from 'components/common/Container';
+import { CheckoutView } from 'components/checkout';
+import { Container } from 'components/common';
 
 export default function Checkout() {
   return (

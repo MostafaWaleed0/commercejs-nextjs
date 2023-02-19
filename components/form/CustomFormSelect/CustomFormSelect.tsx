@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FormLabel from 'components/form/FormLabel';
+import { FormLabel } from 'components/form';
 import { ArrowDown } from 'components/icons';
 
 interface Props {

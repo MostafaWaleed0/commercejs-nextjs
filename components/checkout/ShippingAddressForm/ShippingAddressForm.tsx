@@ -1,9 +1,8 @@
 import { SetStateAction, useEffect, useState } from 'react';
 import { commerce } from 'lib/commerce';
 import { useRouter } from 'next/router';
-import { FormInput } from 'components/form';
+import { FormInput, FormSelect } from 'components/form';
 import { checkoutValidate } from 'utils';
-import { FormSelect } from 'components/form';
 import { ShippingAddressFormType } from 'lib/types';
 import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import type {
