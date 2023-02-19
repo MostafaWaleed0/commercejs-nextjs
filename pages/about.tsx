@@ -77,7 +77,7 @@ export default function About() {
     <Container>
       <Banner
         title="Plants increase happiness"
-        image="pexels-sohail-nachiti-807598.jpg"
+        image="about-us/pexels-sohail-nachiti-807598.jpg"
       />
       <article className="container region flex flex-col md:flex-row justify-center items-center gap-16">
         <div>
