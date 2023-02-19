@@ -6,7 +6,7 @@ export default function Container(props) {
   const router = useRouter();
   const { children, ...customMeta } = props;
 
-  const prop = {
+  const meta = {
     title: '',
     description: ``,
     image: '"',
@@ -22,8 +22,8 @@ export default function Container(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <title>{prop.title}</title>
-        <meta content={prop.description} name="description" />
+        <title>{meta.title}</title>
+        <meta content={meta.description} name="description" />
         <link
           rel="canonical"
           href={`https://plant-life-gamma.vercel.app${router.asPath}`}
