@@ -1,11 +1,7 @@
-import Link from 'next/link';
-import dynamic from 'next/dynamic';
-import { useCartContext } from 'context/cart';
+import { CartItem } from 'components/cart';
 import { Container } from 'components/common';
-
-const CartItem = dynamic(() => import('components/cart'), {
-  ssr: false
-});
+import { useCartContext } from 'context/cart';
+import Link from 'next/link';
 
 export default function Cart() {
   const { line_items, subtotal, total_unique_items } = useCartContext();

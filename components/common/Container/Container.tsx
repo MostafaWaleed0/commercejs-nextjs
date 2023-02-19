@@ -1,13 +1,6 @@
+import { Footer, Header } from 'components/common';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import dynamic from 'next/dynamic';
-
-const Header = dynamic(() => import('components/common/Header'), {
-  ssr: false
-});
-const Footer = dynamic(() => import('components/common/Footer'), {
-  ssr: false
-});
 
 export default function Container(props) {
   const router = useRouter();

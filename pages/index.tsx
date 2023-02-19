@@ -2,15 +2,11 @@ import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 import { commerce } from 'lib/commerce';
 import { Container } from 'components/common';
 import { useUI } from 'context/ui';
 import { Flower, Box, Cart, Search } from 'components/icons';
-
-const ProductList = dynamic(() => import('components/product/ProductList'), {
-  ssr: false
-});
+import { ProductList } from 'components/product';
 
 export async function getStaticProps() {
   const { data: products_plants } = await commerce.products.list({

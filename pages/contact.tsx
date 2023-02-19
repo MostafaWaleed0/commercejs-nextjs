@@ -1,11 +1,6 @@
-import dynamic from 'next/dynamic';
+import ContactForm from 'components/ContactForm';
 import { Container } from 'components/common';
-
-const ContactForm = dynamic(() => import('components/ContactForm'), {
-  ssr: false
-});
-
-const Banner = dynamic(() => import('components/ui/Banner'), { ssr: false });
+import { Banner } from 'components/ui';
 
 export default function Contact() {
   return (
