@@ -10,7 +10,6 @@ export default function Container(props) {
     title: '',
     description: ``,
     image: '"',
-    type: 'website',
     ...customMeta
   };
 
