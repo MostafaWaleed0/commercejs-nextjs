@@ -1,11 +1,11 @@
-import { toast } from 'react-hot-toast';
-import { commerce } from 'lib/commerce';
-import { getPrice, options } from 'utils';
-import { useCartContext } from 'context/cart';
-import { useEffect, useState } from 'react';
-import { Collapse, Price } from 'components/ui';
-import { ProductOptions } from 'components/product';
 import type { Product } from '@chec/commerce.js/types/product';
+import { ProductOptions } from 'components/product';
+import { Collapse, Price } from 'components/ui';
+import { useCartContext } from 'context/cart';
+import { commerce } from 'lib/commerce';
+import { useEffect, useState } from 'react';
+import { toast } from 'react-hot-toast';
+import { getPrice, options } from 'utils';
 
 interface Props {
   product: Product;

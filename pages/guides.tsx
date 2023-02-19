@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { Container } from 'components/common';
 import { commerce } from 'lib/commerce';
 import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export async function getStaticProps() {

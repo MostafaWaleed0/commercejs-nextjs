@@ -1,4 +1,4 @@
-import { useEffect, MutableRefObject, Dispatch, SetStateAction } from 'react';
+import { Dispatch, MutableRefObject, SetStateAction, useEffect } from 'react';
 
 export default function useMediaQuery(
   query: number,

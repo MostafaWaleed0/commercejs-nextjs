@@ -1,12 +1,12 @@
 import 'styles/global.css';
 // import * as gtag from 'lib/gtag';
-import { AppProps } from 'next/app';
-import { UIProvider } from 'context/ui';
-import { CartProvider } from 'context/cart';
 import algoliasearch from 'algoliasearch/lite';
+import { CartProvider } from 'context/cart';
+import { UIProvider } from 'context/ui';
+import { AppProps } from 'next/app';
+import { useCallback } from 'react';
 import toast, { ToastBar, Toaster } from 'react-hot-toast';
 import { InstantSearch } from 'react-instantsearch-hooks-web';
-import { useCallback } from 'react';
 
 const algoliaClient = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,

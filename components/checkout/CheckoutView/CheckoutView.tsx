@@ -1,13 +1,13 @@
-import { CheckoutCaptureResponse } from '@chec/commerce.js/types/checkout-capture-response';
 import { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
+import { CheckoutCaptureResponse } from '@chec/commerce.js/types/checkout-capture-response';
 import { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
-import { ShippingAddressForm, PaymentForm } from 'components/checkout';
+import { PaymentForm, ShippingAddressForm } from 'components/checkout';
+import { Circle } from 'components/icons';
 import { useCartContext } from 'context/cart';
 import { commerce } from 'lib/commerce';
+import { ShippingAddressFormType } from 'lib/types';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { ShippingAddressFormType } from 'lib/types';
-import { Circle } from 'components/icons';
 
 export default function CheckoutView() {
   const { id, setCart } = useCartContext();

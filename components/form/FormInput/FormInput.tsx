@@ -1,5 +1,5 @@
-import { InputHTMLAttributes } from 'react';
 import { FormLabel } from 'components/form';
+import { InputHTMLAttributes } from 'react';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   [x: string]: any;

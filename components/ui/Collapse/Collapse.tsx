@@ -1,6 +1,6 @@
+import { Minus, Plus } from 'components/icons';
 import { memo, useState } from 'react';
 import { convertToText } from 'utils';
-import { Plus, Minus } from 'components/icons';
 
 interface Props {
   order: number;

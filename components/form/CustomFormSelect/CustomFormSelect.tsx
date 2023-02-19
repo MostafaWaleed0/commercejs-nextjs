@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { FormLabel } from 'components/form';
 import { ArrowDown } from 'components/icons';
+import { useState } from 'react';
 
 interface Props {
   [x: string]: any;

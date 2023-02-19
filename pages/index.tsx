@@ -1,12 +1,12 @@
-import { InferGetStaticPropsType } from 'next';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Suspense } from 'react';
-import { commerce } from 'lib/commerce';
 import { Container } from 'components/common';
-import { useUI } from 'context/ui';
-import { Flower, Box, Cart, Search } from 'components/icons';
+import { Box, Cart, Flower, Search } from 'components/icons';
 import { ProductList } from 'components/product';
+import { useUI } from 'context/ui';
+import { commerce } from 'lib/commerce';
+import { InferGetStaticPropsType } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Suspense } from 'react';
 
 export async function getStaticProps() {
   const { data: products_plants } = await commerce.products.list({

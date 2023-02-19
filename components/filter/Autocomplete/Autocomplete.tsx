@@ -1,6 +1,11 @@
-import Link from 'next/link';
-import algoliasearch from 'algoliasearch/lite';
+import { createAutocomplete } from '@algolia/autocomplete-core';
+import { getAlgoliaResults } from '@algolia/autocomplete-js';
+import { Hit } from '@algolia/client-search';
 import type { Product } from '@chec/commerce.js/types/product';
+import algoliasearch from 'algoliasearch/lite';
+import { Price } from 'components/ui';
+import Image from 'next/image';
+import Link from 'next/link';
 import React, {
   MutableRefObject,
   useEffect,
@@ -8,12 +13,7 @@ import React, {
   useRef,
   useState
 } from 'react';
-import { createAutocomplete } from '@algolia/autocomplete-core';
-import { getAlgoliaResults } from '@algolia/autocomplete-js';
 import { getPrice, options } from 'utils';
-import { Price } from 'components/ui';
-import { Hit } from '@algolia/client-search';
-import Image from 'next/image';
 
 const searchClient = algoliasearch(
   'J455L6ETKV',

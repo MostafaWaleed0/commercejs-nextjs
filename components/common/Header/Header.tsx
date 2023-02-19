@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
-import Link from 'next/link';
+import { Bag, List, Logo, Search } from 'components/icons';
 import { useCartContext } from 'context/cart';
+import { useUI } from 'context/ui';
 import useMediaQuery from 'hook/useMediaQuery';
 import dynamic from 'next/dynamic';
-import { useUI } from 'context/ui';
-import { Logo, Bag, Search, List } from 'components/icons';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
 
 const Autocomplete = dynamic(() => import('components/filter/Autocomplete'), {
   ssr: false

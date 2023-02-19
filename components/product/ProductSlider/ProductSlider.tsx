@@ -1,6 +1,6 @@
+import type { Product } from '@chec/commerce.js/types/product';
 import Image from 'next/image';
 import { useCallback, useState } from 'react';
-import type { Product } from '@chec/commerce.js/types/product';
 
 interface Props {
   product: Product;

@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Price } from 'components/ui';
-import { getPrice, options } from 'utils';
 import type { Product } from '@chec/commerce.js/types/product';
+import { Price } from 'components/ui';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { getPrice, options } from 'utils';
 
 interface Props {
   product: Product;

@@ -1,5 +1,5 @@
-import { TextareaHTMLAttributes } from 'react';
 import { FormLabel } from 'components/form';
+import { TextareaHTMLAttributes } from 'react';
 
 interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   [x: string]: any;

@@ -1,15 +1,15 @@
+import type { Cart } from '@chec/commerce.js/types/cart';
+import type { LineItem } from '@chec/commerce.js/types/line-item';
+import type { Price } from '@chec/commerce.js/types/price';
+import { commerce } from 'lib/commerce';
 import {
   createContext,
-  useReducer,
-  useEffect,
-  useContext,
   useCallback,
-  useMemo
+  useContext,
+  useEffect,
+  useMemo,
+  useReducer
 } from 'react';
-import { commerce } from 'lib/commerce';
-import type { Cart } from '@chec/commerce.js/types/cart';
-import type { Price } from '@chec/commerce.js/types/price';
-import type { LineItem } from '@chec/commerce.js/types/line-item';
 
 type State = {
   id: string;

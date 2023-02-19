@@ -1,7 +1,7 @@
-import { Hits, SortBy, Configure } from 'react-instantsearch-hooks-web';
-import { useCallback, useRef, useState } from 'react';
-import useMediaQuery from 'hook/useMediaQuery';
 import { FilterView, Hit } from 'components/filter';
+import useMediaQuery from 'hook/useMediaQuery';
+import { useCallback, useRef, useState } from 'react';
+import { Configure, Hits, SortBy } from 'react-instantsearch-hooks-web';
 
 interface Props {
   title: string;

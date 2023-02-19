@@ -1,15 +1,15 @@
-import { FormEvent } from 'react';
-import { loadStripe, StripeElements } from '@stripe/stripe-js';
+import type { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
+import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import {
-  Elements,
   CardElement,
+  Elements,
   ElementsConsumer
 } from '@stripe/react-stripe-js';
-import { toast } from 'react-hot-toast';
-import { ShippingAddressFormType } from 'lib/types';
+import { loadStripe, StripeElements } from '@stripe/stripe-js';
 import { Stripe } from '@stripe/stripe-js/types/stripe-js/stripe';
-import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
-import type { CheckoutCapture } from '@chec/commerce.js/types/checkout-capture';
+import { ShippingAddressFormType } from 'lib/types';
+import { FormEvent } from 'react';
+import { toast } from 'react-hot-toast';
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!

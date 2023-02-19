@@ -1,8 +1,8 @@
 import { Container } from 'components/common';
-import { commerce } from 'lib/commerce';
-import { InferGetStaticPropsType } from 'next';
-import type { Params } from 'lib/types';
 import dompurify from 'dompurify';
+import { commerce } from 'lib/commerce';
+import type { Params } from 'lib/types';
+import { InferGetStaticPropsType } from 'next';
 
 export async function getStaticPaths() {
   const { data: articles } = await commerce.products.list({

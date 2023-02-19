@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import { Container } from 'components/common';
-import { useState } from 'react';
+import { Facebook, Mail, Twitter } from 'components/icons';
 import { Banner } from 'components/ui';
-import { Facebook, Twitter, Mail } from 'components/icons';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const list = [
   {

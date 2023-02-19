@@ -1,11 +1,11 @@
-import Image from 'next/image';
-import { Price } from 'components/ui';
-import { toast } from 'react-hot-toast';
-import { commerce } from 'lib/commerce';
-import { useCartContext } from 'context/cart';
-import type { LineItem } from '@chec/commerce.js/types/line-item';
 import type { Cart } from '@chec/commerce.js/types/cart';
-import { XCircle, ArrowLeft, ArrowRight } from 'components/icons';
+import type { LineItem } from '@chec/commerce.js/types/line-item';
+import { ArrowLeft, ArrowRight, XCircle } from 'components/icons';
+import { Price } from 'components/ui';
+import { useCartContext } from 'context/cart';
+import { commerce } from 'lib/commerce';
+import Image from 'next/image';
+import { toast } from 'react-hot-toast';
 
 interface CartType {
   cart: Cart;

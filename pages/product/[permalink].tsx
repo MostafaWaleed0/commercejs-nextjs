@@ -1,9 +1,9 @@
-import type { InferGetStaticPropsType } from 'next';
-import { useRouter } from 'next/router';
-import { commerce } from 'lib/commerce';
 import { Container } from 'components/common';
 import { ProductDetails, ProductSlider } from 'components/product';
+import { commerce } from 'lib/commerce';
 import type { Params } from 'lib/types';
+import type { InferGetStaticPropsType } from 'next';
+import { useRouter } from 'next/router';
 
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list();

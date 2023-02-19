@@ -1,5 +1,5 @@
+import { Minus, Plus } from 'components/icons';
 import { memo, ReactNode, useState } from 'react';
-import { Plus, Minus } from 'components/icons';
 
 interface Props {
   title: string;

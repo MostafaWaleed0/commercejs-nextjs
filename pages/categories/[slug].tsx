@@ -1,7 +1,7 @@
-import { commerce } from 'lib/commerce';
-import Search from 'components/search';
-import { Container } from 'components/common';
 import { Category } from '@chec/commerce.js/types/category';
+import { Container } from 'components/common';
+import Search from 'components/search';
+import { commerce } from 'lib/commerce';
 
 type Slug = {
   params: {

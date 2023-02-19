@@ -1,14 +1,14 @@
-import { SetStateAction, useEffect, useState } from 'react';
-import { commerce } from 'lib/commerce';
-import { useRouter } from 'next/router';
-import { FormInput, FormSelect } from 'components/form';
-import { checkoutValidate } from 'utils';
-import { ShippingAddressFormType } from 'lib/types';
-import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
 import type {
   LocaleListCountriesResponse,
   LocaleListSubdivisionsResponse
 } from '@chec/commerce.js/features/services';
+import type { CheckoutToken } from '@chec/commerce.js/types/checkout-token';
+import { FormInput, FormSelect } from 'components/form';
+import { commerce } from 'lib/commerce';
+import { ShippingAddressFormType } from 'lib/types';
+import { useRouter } from 'next/router';
+import { SetStateAction, useEffect, useState } from 'react';
+import { checkoutValidate } from 'utils';
 
 interface IErrors extends Partial<ShippingAddressFormType> {}
 

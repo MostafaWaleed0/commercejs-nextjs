@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { Container } from 'components/common';
 import { Banner, Collapse } from 'components/ui';
+import Link from 'next/link';
 
 export default function Careers() {
   return (
