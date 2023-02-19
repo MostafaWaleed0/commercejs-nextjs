@@ -24,7 +24,10 @@ export default function Container(props) {
         />
         <title>{prop.title}</title>
         <meta content={prop.description} name="description" />
-        <link rel="canonical" href={`https://www..${router.asPath}`} />
+        <link
+          rel="canonical"
+          href={`https://plant-life-gamma.vercel.app${router.asPath}`}
+        />
       </Head>
       <Header />
       <main id="main-content" tabIndex={-1}>
