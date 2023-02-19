@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         containerClassName="w-4xl"
         containerStyle={{}}
         toastOptions={{
-          className: 'min-w-[33rem] h-20',
+          className: 'h-fit min-w-[35%]',
           duration: 3000
         }}
       >
