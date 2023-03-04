@@ -12,12 +12,10 @@ const Autocomplete = dynamic(() => import('components/filter/Autocomplete'), {
 
 export default function Header() {
   const dialog = useRef(null);
-  const nav = useRef(null);
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const { total_unique_items } = useCartContext();
   const { displaySearch, openSearch, closeSearch } = useUI();
   const matchesSearch = useMediaQuery(0, dialog, displaySearch, openSearch);
-  const matchesNav = useMediaQuery(1024, nav, toggle, setToggle);
 
   const handleToggle = () => setToggle((x) => !x);
 
@@ -36,8 +34,8 @@ export default function Header() {
               aria-label="primary"
               tabIndex={-1}
               className={`${
-                matchesNav ? '' : 'hidden'
-              } absolute top-full right-0 z-100 lg:static p-3 lg:p-0 lg:bg-white bg-green-900`}
+                toggle ? '' : 'hidden'
+              }  lg:block absolute top-full right-0 z-100 lg:static p-3 lg:p-0 lg:bg-white bg-green-900`}
             >
               <ul
                 className="flex flex-col lg:flex-row gap-5 text-white lg:text-green-900"
